@@ -1,0 +1,8 @@
+﻿ @media(min-width: 768px) {
+            #main-menu > li {
+                float: none;
+                display: table-cell;
+                width: 1%;
+                text-align: center;
+            }
+        }

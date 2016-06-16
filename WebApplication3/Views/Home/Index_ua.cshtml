@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+</head>
+<body>
+    <nav id="main-nav" role="navigation">
+        <!-- Sample menu definition -->
+        <ul id="main-menu" class="sm sm-clean">
+            <li><a href="#"><img src="~/js_css/images/logo2.png" style="width:120px;height:auto;padding:0px;margin:0px;bottom:1px"> </a></li>
+            <li>
+            <li>
+            <li>
+                <a href="http://www.smartmenus.org/about/">Про проект</a>
+                <ul>
+                    <li><a href="http://www.smartmenus.org/about/introduction-to-smartmenus-jquery/">Introduction to SmartMenus jQuery</a></li>
+                    <li><a href="http://www.smartmenus.org/about/themes/">Themes</a></li>
+                    <li><a href="http://vadikom.com/about/#vasil-dinkov">The author</a></li>
+                    <li>
+                        <a href="http://www.smartmenus.org/about/vadikom/">The company</a>
+                        <ul>
+                            <li><a href="http://vadikom.com/about/">About Vadikom</a></li>
+                            <li><a href="http://vadikom.com/projects/">Projects</a></li>
+                            <li><a href="http://vadikom.com/services/">Services</a></li>
+                            <li><a href="http://www.smartmenus.org/about/vadikom/privacy-policy/">Privacy policy</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="http://www.smartmenus.org/download/">Завантаження</a></li>
+            <li>
+                <a href="http://www.smartmenus.org/support/">Підтримка</a>
+                <ul>
+                    <li><a href="http://www.smartmenus.org/support/premium-support/">Premium support</a></li>
+                    <li><a href="http://www.smartmenus.org/support/forums/">Forums</a></li>
+                </ul>
+            </li>
+            <li><a href="http://www.smartmenus.org/docs/">Документи</a></li>
+            <li>
+                @Html.ActionLink("Особистий кабінет", "personal_account_ua", "Home")
+            </li>
+            <li>
+                <a href="#">Мова</a>
+                <ul class="mega-menu">
+                    <li>
+                        <!-- The mega drop down contents -->
+                        <div style="width:400px;max-width:100%;">
+                            <div style="padding:5px 24px;">
+                                <table>
+                                    <tr>
+                                        <td style="width:100px">@Html.Raw(@Html.ActionLink("[Uk]", "Index", "Home").ToHtmlString().Replace("[Uk]", "<img src=\"/js_css/images/United-Kingdom.png\" />"))</td>
+                                        <td style="width:100px">@Html.Raw(@Html.ActionLink("[Ru]", "Index_ru", "Home").ToHtmlString().Replace("[Ru]", "<img src=\"/js_css/images/Russia.png\" />"))</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="bxslider">
+            <li style="left:0px;top:-20px"><img src="~/js_css/images/kartink.jpg" title="Puppy Care - це система, що допомагає слідкувати за вашим улюбленцем." /></li>
+            <li style="left:0px;top:-20px"><img src="~/js_css/images/kartinki.jpg" title="Система складається з трьох модулей: 'Годівниця', 'Ліжечко' і 'Нашийник'" /></li>
+            <li style="left:0px;top:-20px"><img src="~/js_css/images/ofc_outlookrefreshbg_1201_1920x720_en_us.jpg" title="Система включає додатки на системах  Android, Windows Phone, а також IOS." /></li>
+        </ul>
+
+
+        <div style="position:relative;top:50px">
+            <section></section>
+            <section>
+                <article class="scrollflow -pop -opacity">
+
+                    <h2>Модуль "Розумний Нашийник"</h2>
+                    <p>Модуль Розумний Нашийник доможе Вам ефективно контролювати стан здоров'я Вашого собаки. Він буде контролювати температуру і вимірювати пульс домашнього улюбленця, щоб Ви знали, як він почувається, де б не був. Завдяки GPS Ви також матимете можливість знати місцеположення вашого улюбленця в любое будь-який час.</p>
+			</p><img src="~/js_css/images/colar.png" />
+
+                </article>
+            </section>
+            <section>
+                <article>
+
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="100%" valign="top">
+                                <h2 class="scrollflow -slide-right -opacity">Модуль "Розумне Ліжечко"</h2>
+                                <p class="scrollflow -slide-right -opacity">Розумне ліжечко дозволяє хазяїну собаки контролювати мікроклімат спального місця улюбленця із мобільного додатку Puppy Care. Ви матимете можливість підвищити температуру в ліжечку, коли навколо занадто прохолодно, або, навпаки, зменшити її, щоб забезпечити максимальний комфорт улюбленця.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" valign="top">
+                                <p class="scrollflow -slide-left -opacity"><img src="~/js_css/images/bed.png" style="width:70%;height:auto"></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                </article>
+            </section>
+
+            <section>
+                <article>
+
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="100%" valign="top">
+                                <h2 class="scrollflow -slide-top -opacity">Модуль "Розумна Годівниця"</h2>
+                                <p class="scrollflow -slide-top -opacity">Модуль Розумна Годівниця дозволить Вам нагодувати свого собаку простіше, ніж будь-коли раніше, просто натиснувши лише одну кнопку в мобільному додатку Puppy Care. Додаток може також надати пораду, скільки їжі Вам слід дати улюбленцю у відповідності з показниками його здоров'я. Розумна Годівниця також буде постійно підтримувати високий рівень води у мисці собаки і поповнювати його, якщо це необхідно.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" valign="top">
+                                <p class="scrollflow -slide-bottom -opacity"><img src="~/js_css/images/feeder.png" /></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                </article>
+            </section>
+
+            <section>
+                <div class="scrollflow -slide-top" data-scrollflow-start="0" data-scrollflow-distance="100" data-scrollflow-amount="200">&nbsp;</div>
+                <article>
+                    <h2 class="scrollflow -slide-bottom -opacity" data-scrollflow-start="0" data-scrollflow-distance="100" data-scrollflow-amount="200">Проект Puppy Care був створений<br />за допомогою лабораторії<br />"Інтернет речей" корпорації Майкрософт Україна.</h2>
+                </article>
+            </section>
+
+            <section>
+                <article>
+            </section>
+        </div>
+        <footer>
+            <div id="container">
+                <div class="footerLeft">
+                    <ul>
+                        <li><a href="#">Додому</a></li>
+                        <li><a href="#">Портфоліо</a></li>
+                        <li><a href="#">Сервіси</a></li>
+                        <li><a href="#">Про проект</a></li>
+                        <li><a href="#">Блог</a></li>
+                        <li class="last"><a href="#">Контакти</a></li>
+                    </ul>
+                    <a href="https://vk.com/microsoftukraine"><img src="~/js_css/images/VK_64x64.png" style="zoom:0.5"></a>
+                    <a href="https://twitter.com/microsoftua"><img src="~/js_css/images/HPFeb15_social_Twitter.png"></a>
+                    <a href="https://www.facebook.com/MicrosoftUkraine"><img src="~/js_css/images/hpfeb15_social_facebook.png" /></a>
+                </div><!--end div "footerLeft"-->
+
+                <div class="contact">
+                    <p>
+                        Лабораторія IoT<br>
+                        Майкрософт Україна<br>
+                        Київ, вул.Жилянська 75<br>
+                        Тел: 650-555-1212<br>
+                        Факс: 650-555-1213
+                    </p>
+                </div><!--end div "contact"-->
+            </div><!--end div "container"-->
+        </footer>
+    </nav>
+</body>
+</html>

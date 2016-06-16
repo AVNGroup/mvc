@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+</head>
+<body>
+    <nav id="main-nav" role="navigation">
+        <!-- Sample menu definition -->
+        <ul id="main-menu" class="sm sm-clean">
+            <li><a href="#"><img src="~/js_css/images/logo2.png" style="width:120px;height:auto;padding:0px;margin:0px;bottom:1px"> </a></li>
+            <li>
+                <a href="http://www.smartmenus.org/about/">About</a>
+                <ul>
+                    <li><a href="http://www.smartmenus.org/about/introduction-to-smartmenus-jquery/">Introduction to SmartMenus jQuery</a></li>
+                    <li><a href="http://www.smartmenus.org/about/themes/">Themes</a></li>
+                    <li><a href="http://vadikom.com/about/#vasil-dinkov">The author</a></li>
+                    <li>
+                        <a href="http://www.smartmenus.org/about/vadikom/">The company</a>
+                        <ul>
+                            <li><a href="http://vadikom.com/about/">About Vadikom</a></li>
+                            <li><a href="http://vadikom.com/projects/">Projects</a></li>
+                            <li><a href="http://vadikom.com/services/">Services</a></li>
+                            <li><a href="http://www.smartmenus.org/about/vadikom/privacy-policy/">Privacy policy</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="http://www.smartmenus.org/download/">Download</a></li>
+            <li>
+                <a href="http://www.smartmenus.org/support/">Support</a>
+                <ul>
+                    <li><a href="http://www.smartmenus.org/support/premium-support/">Premium support</a></li>
+                    <li><a href="http://www.smartmenus.org/support/forums/">Forums</a></li>
+                </ul>
+            </li>
+            <li><a href="http://www.smartmenus.org/docs/">Docs</a></li>
+            <li>
+                @Html.ActionLink("Personal Account", "personal_account", "Home")
+            </li>
+            <li>
+                <a href="#">Language</a>
+                <ul class="mega-menu">
+                    <li>
+                        <!-- The mega drop down contents -->
+                        <div style="width:400px;max-width:100%;">
+                            <div style="padding:5px 24px;">
+                                <table>
+                                    <tr>
+                                        <td style="width:100px">@Html.Raw(@Html.ActionLink("[Ru]", "Index_ru", "Home").ToHtmlString().Replace("[Ru]", "<img src=\"/js_css/images/Russia.png\" />"))</td>
+                                        <td style="width:100px">@Html.Raw(@Html.ActionLink("[Ru]", "Index_ua", "Home").ToHtmlString().Replace("[Ru]", "<img src=\"/js_css/images/Ukraine.png\" />"))</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+       
+        <ul class="bxslider">
+            <li style="left:0px;top:-20px"><img src="~/js_css/images/kartink.jpg" title="Puppy Care is system that helps you to watch for your pet." /></li>
+            <li style="left:0px;top:-20px"><img src="~/js_css/images/kartinki.jpg" title="Module 'Bed' includes temperature sensor and able to change temperature via fan" /></li>
+            <li style="left:0px;top:-20px"><img src="~/js_css/images/ofc_outlookrefreshbg_1201_1920x720_en_us.jpg"  title="System includes apps on Android, Windows Phone and IOS." /></li>
+        </ul>
+
+
+        <div style="position:relative;top:50px">
+            <section></section>
+            <section>
+                <article class="scrollflow -pop -opacity">
+
+                    <h2>Modul "Colar"</h2>
+                    <p>Smart Collar module will help you to monitor effectively your dog’s health state. It will control the temperature and measure the pulse of a pet to let you know how your pet feels wherever it is. Due to the GPS using you will also be able to know your pet’s location anytime.</p><img src="~/js_css/images/colar.png" />
+
+                </article>
+            </section>
+            <section>
+                <article>
+
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="100%" valign="top">
+                                <h2 class="scrollflow -slide-right -opacity">Modul "Bed"</h2>
+                                <p class="scrollflow -slide-right -opacity">Smart Dog Nest will allow a dog owner to control the microclimate in the dog’s sleeping place from the Puppy Care mobile application. You will be able to heat the nest a bit, when it is too cold out or cool it viсe versa.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" valign="top">
+                                <p class="scrollflow -slide-left -opacity"><img src="~/js_css/images/bed.png"  style="width:70%;height:auto"></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                </article>
+            </section>
+
+            <section>
+                <article>
+
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="100%" valign="top">
+                                <h2 class="scrollflow -slide-top -opacity">Modul "Feeder"</h2>
+                                <p class="scrollflow -slide-top -opacity">Dog Feeder is aimed to let you feed your dog easily just by clicking one button in you Puppy Care mobile application.  The application will also advice you, how much food should you give to your pet according to its health parameters. Smart Feeder will also control the constant high water level in a dog’s bowl and refill it if it is a need.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100%" valign="top">
+                                <p class="scrollflow -slide-bottom -opacity"><img src="~/js_css/images/feeder.png" /></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                </article>
+            </section>
+
+            <section>
+                <div class="scrollflow -slide-top" data-scrollflow-start="0" data-scrollflow-distance="100" data-scrollflow-amount="200">&nbsp;</div>
+                <article>
+                    <h2 class="scrollflow -slide-bottom -opacity" data-scrollflow-start="0" data-scrollflow-distance="100" data-scrollflow-amount="200">Puppy Care project was created<br />with the help of<br />Microsoft Ukraine Internet of Things laboratory.</h2>
+                </article>
+            </section>
+
+            <section>
+                <article>
+            </section>
+        </div>
+        <footer>
+            <div id="container">
+                <div class="footerLeft">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li class="last"><a href="#">Contact</a></li>
+                    </ul>
+                    <a href="https://vk.com/microsoftukraine"><img src="~/js_css/images/VK_64x64.png"   style="zoom:0.5"></a>
+                    <a href="https://twitter.com/microsoftua"><img src="~/js_css/images/HPFeb15_social_Twitter.png"></a>
+                    <a href="https://www.facebook.com/MicrosoftUkraine"><img src="~/js_css/images/hpfeb15_social_facebook.png" /></a>
+                </div><!--end div "footerLeft"-->
+
+                <div class="contact">
+                    <p>
+                        IoT laboratory<br>
+                        Microsoft Ukraine<br>
+                        Kyiv, Zhilyanska st. 75<br>
+                        P: 650-555-1212<br>
+                        F: 650-555-1213
+                    </p>
+                </div><!--end div "contact"-->
+            </div><!--end div "container"-->
+        </footer>
+    </nav>
+</body>
+</html>

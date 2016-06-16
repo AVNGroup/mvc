@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Temp2";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AVN-group</title>
+</head>
+<body>
+    <div>
+        <img src="~/App_Data/logo.png" />
+        <p>@ViewBag.inta</p>
+        <form method="post">
+
+            <input type="hidden" value="@ViewBag.BookId" name="BookId" />
+
+            @Html.ActionLink("UP", "ON", "Temp")<br />
+            @Html.ActionLink("DOWN", "OFF", "Temp")
+
+
+        </form>
+    </div>
+</body>
+</html>
+
+

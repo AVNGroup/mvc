@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+   
+
+
+</head>
+<body>
+    <nav id="main-nav" role="navigation">
+        <!-- Sample menu definition -->
+        <ul id="main-menu" class="sm sm-clean">
+            <li>@Html.Raw(@Html.ActionLink("[Ru]", "Index", "Home").ToHtmlString().Replace("[Ru]", "<img src=\"/js_css/images/logo2.png\" />"))</li>
+            <li>
+                <a href="http://www.smartmenus.org/about/">About</a>
+                <ul>
+                    <li><a href="http://www.smartmenus.org/about/introduction-to-smartmenus-jquery/">Introduction to SmartMenus jQuery</a></li>
+                    <li><a href="http://www.smartmenus.org/about/themes/">Themes</a></li>
+                    <li><a href="http://vadikom.com/about/#vasil-dinkov">The author</a></li>
+                    <li>
+                        <a href="http://www.smartmenus.org/about/vadikom/">The company</a>
+                        <ul>
+                            <li><a href="http://vadikom.com/about/">About Vadikom</a></li>
+                            <li><a href="http://vadikom.com/projects/">Projects</a></li>
+                            <li><a href="http://vadikom.com/services/">Services</a></li>
+                            <li><a href="http://www.smartmenus.org/about/vadikom/privacy-policy/">Privacy policy</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="http://www.smartmenus.org/download/">Download</a></li>
+            <li>
+                <a href="http://www.smartmenus.org/support/">Support</a>
+                <ul>
+                    <li><a href="http://www.smartmenus.org/support/premium-support/">Premium support</a></li>
+                    <li><a href="http://www.smartmenus.org/support/forums/">Forums</a></li>
+                </ul>
+            </li>
+            <li><a href="http://www.smartmenus.org/docs/">Docs</a></li>
+            <li>
+                <a href="#">Personal Account</a>
+            </li>
+            <li>
+                <a href="#">Language</a>
+                <ul class="mega-menu">
+                    <li>
+                        <!-- The mega drop down contents -->
+                        <div style="width:400px;max-width:100%;">
+                            <div style="padding:5px 24px;">
+                                <table>
+                                    <tr>
+                                        <td style="width:100px">@Html.Raw(@Html.ActionLink("[Ru]", "personal_account_ru", "Home").ToHtmlString().Replace("[Ru]", "<img src=\"/js_css/images/Russia.png\" />"))</td>
+                                        <td style="width:100px">@Html.Raw(@Html.ActionLink("[Ua]", "personal_account_ua", "Home").ToHtmlString().Replace("[Ua]", "<img src=\"/js_css/images/Ukraine.png\" />"))</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div style="width:100%;height:auto;min-height:350px; position:relative;top:20px">
+            <div style="width:auto%;height:150px;left:5%;float:left">
+                <img src="~/js_css/images/24561_.jpg" style="height:100%;width:auto;left:5%;position:relative">
+                <p style="font-weight:bold;font-weight:.8em;left:5%;position:relative">Food supply</p>
+                <label>
+                    <input type="checkbox" name="checkboxName" class="checkbox" />
+                    <div class="switch" style="left:5%;"></div>
+                </label>
+            </div>
+            <div style="width:auto%;height:150px;left:45%;float:left">
+                <img src="~/js_css/images/0_6050d_559bc8c5_orig.jpg" style="height:100%;width:auto;left:45%;position:relative">
+                <p style="font-weight:bold;font-weight:.8em;left:45%;position:relative">Water supply</p>
+                <label>
+                    <input type="checkbox" name="checkboxName" class="checkbox" />
+                    <div class="switch" style="left:45%;"></div>
+                </label>
+            </div>
+            <div style="width:40px;height:200px;left:10%;position:relative;float:left">
+                <form name="tes">
+                    <p>
+                        <b>Latitude</b><br />
+                        <b>Longtitude</b><br />
+                        <b>Temperature</b><br />
+                    </p>
+                    <p>
+                        <input type="button" name="btn" onclick="input()" value="Отправить">
+                    </p>
+                </form>
+
+            </div>
+           <div style="width:auto;height:200px;left:15%;position:relative;float:left">
+    <form name="test">
+        <p>
+            <input type="text" id="lat" size="10" value="50.554556"><br />
+            <input type="text" id="lon" size="10" value="30.556235"><br />
+            <input type="text" id="temp" size="10" value="24.55"><br />
+        </p>
+
+    </form>
+
+</div>
+        </div>
+
+        <script>
+
+$('.switch').click(function()
+{
+$(this).toggleClass("switchOn");
+});
+    </script>
+        
+   
+        <div class="row">
+            <div class="span11">
+                <div id="map"></div>
+            </div>
+            <div class="span6"> 
+            </div>
+        </div>
+        <script>
+            function input() {
+                var latitude = document.getElementById("lat").value;
+                var longtitude = document.getElementById("lon").value;
+                var temp = document.getElementById("temp").value;
+                alert(latitude);
+                alert(longtitude);
+                alert(temp);
+                map.addMarker({
+                    lat: latitude,
+                    lng: longtitude,
+                    title: 'Bob',
+                    details: {
+                        database_id: 42,
+                        author: 'HPNeo'
+                    },
+                    click: function(e){
+                    if(console.log)
+                        console.log(e);
+                    alert('Bob');
+                },
+                mouseover: function(e){
+                    if(console.log)
+                        console.log(e);
+                }
+            });
+            }
+        </script>
+        <footer>
+            <div id="container">
+                <div class="footerLeft">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li class="last"><a href="#">Contact</a></li>
+                    </ul>
+                    <a href="https://vk.com/microsoftukraine"><img src="~/js_css/images/VK_64x64.png" style="zoom:0.5"></a>
+                    <a href="https://twitter.com/microsoftua"><img src="~/js_css/images/HPFeb15_social_Twitter.png"></a>
+                    <a href="https://www.facebook.com/MicrosoftUkraine"><img src="~/js_css/images/hpfeb15_social_facebook.png" /></a>
+                </div><!--end div "footerLeft"-->
+
+                <div class="contact">
+                    <p>
+                        IoT laboratory<br>
+                        Microsoft Ukraine<br>
+                        Kyiv, Zhilyanska st. 75<br>
+                        P: 650-555-1212<br>
+                        F: 650-555-1213
+                    </p>
+                </div><!--end div "contact"-->
+            </div><!--end div "container"-->
+        </footer>
+    </nav>
+</body>
+
+</html>

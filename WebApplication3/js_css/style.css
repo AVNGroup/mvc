@@ -1,0 +1,225 @@
+
+	html, body
+	{
+		height: 100%;
+	}
+
+	body
+	{
+		font-family: "Raleway", Arial, Helvetica, sans-serif;
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 20px;
+		margin: 0px;
+		-webkit-overflow-scrolling: none;
+	}
+	
+	div section
+	{
+		margin: 0px;
+		padding: 0px;
+		position: relative;
+		overflow: hidden;
+	}
+	
+	div section article
+	{
+		width: 500px;
+		margin: 0 auto;
+		padding: 150px 0px 150px 0px;
+		max-width: 80%;
+		text-align: center;
+	}
+	
+	div section article h1,
+	div section article h2,
+	div section article h3
+	{
+		font-weight: 200;
+		font-size: 30px;
+		line-height: 40px;
+	}
+	
+	div section article strong
+	{
+		text-transform: uppercase;
+		font-weight: 400;
+	}
+	
+	div section article a
+	{
+		color: #fff;
+	}
+	
+	div section article div
+	{
+		font-size: 100px;
+		line-height: 100px;
+	}
+	
+	div section:first-child,
+	div section:last-child
+	{
+		background-color: #99bbbf;
+		color: #fff;
+		min-height: 100%;
+	}
+	
+	div section:first-child article,
+	div section:last-child article
+	{
+		position: absolute;
+		top: 50%;
+		width: 80%; 
+		max-width: 80%;
+		margin-left: 10%; 
+		margin-top: -274px;
+	}
+
+	div section:nth-child(2)
+	{
+		background-color: #D27459;
+		color: #fff;
+	}
+	
+	div section:nth-child(3)
+	{
+		background-color: #f2f2f0;
+	}
+	
+	div section:nth-child(4)
+	{
+		background-color: #fff;
+	}
+	
+	div section:nth-child(5) h2
+	{
+		color: #fff;
+		text-shadow: 1px 1px 3px rgba( 0, 0, 0, 0.25 );
+		font-weight: 400;
+	}
+	
+	div section:nth-child(5) div
+	{
+		position: absolute;
+		top: -25%;
+		left: 0px;
+		height: 120%;
+		width: 100%;
+		background-image: url("images/iot.jpg");
+		background-size: 100% 100%;
+	}
+footer {
+	height:250px;
+	background-color:#C15007;
+	border-top:10px solid #EDEAE5;
+	color:#fff;
+	font-weight:bold;
+	font-weight:.8em;
+    bottom: 0px;
+}
+.footerLeft {
+	color:#fff;
+	float:left;
+	width:27.6%;
+	height:auto;
+	border-right:1px solid #fff;
+	margin-top:5%;
+	padding-top:2%;
+}
+
+.footerLeft ul li{
+	display:inline;
+	text-transform:uppercase;
+	list-style:none;
+	margin-right:2%;
+}
+
+.footerLeft ul li a {
+	font-size:.8em;
+	color:#fff;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.footerLeft ul li a:hover {
+	text-decoration:underline;
+}
+
+.footerLeft img {
+	float:right;
+	margin:5% 2% 5% 0;
+}
+
+.contact {
+	float:left;
+	margin-top:5%;
+	padding:2% 2% 0 2%;
+}
+.twitter {
+	width: 35%;
+	height:150px;
+	float:left;
+	margin-top:5%;
+	padding:2% 2% 0 2%;
+	border-right:1px solid #fff;
+	color:#fff;
+	font-weight:bold;
+	font-weight:.8em;
+}
+.checkbox{display:none}
+.switch
+{
+    text-align: center;
+width: 124px;
+height: 64px;
+background: #E5E5E5;
+z-index: 0;
+margin: 0;
+padding: 0;
+appearance: none;
+border: none;
+cursor: pointer;
+position: relative;
+border-radius:32px; 
+-moz-border-radius:32px; 
+-webkit-border-radius:32px; 
+}
+.switch:before
+{
+content: ' ';
+position: absolute;
+left: 1px;
+top: 1px;
+width: 120px;
+height: 60px;
+background: #FFFFFF;
+z-index: 1;
+border-radius:32px; 
+-moz-border-radius:32px; 
+-webkit-border-radius:32px;
+}
+.switch:after 
+{
+content: ' ';
+height: 58px;
+width: 58px;
+border-radius: 56px;
+background: #FFFFFF;
+position: absolute;
+z-index: 2;
+top: 2px;
+left: 2px;
+-webkit-transition-duration: 300ms;
+transition-duration: 300ms;
+-webkit-box-shadow: 0 2px 5px #999999;
+box-shadow: 0 2px 5px #999999;
+}
+.switchOn , .switchOn:before
+{
+background: #4cd964 !important;
+}
+.switchOn:after
+{
+left: 62px !important;
+}
