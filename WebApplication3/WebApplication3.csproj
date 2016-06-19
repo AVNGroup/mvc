@@ -305,9 +305,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AzureController.cs" />
-    <Compile Include="Controllers\Collar\CollarController.cs" />
-    <Compile Include="Controllers\Feeder\FeederController.cs" />
-    <Compile Include="Controllers\AzureController.cs" />
     <Compile Include="Controllers\Chart\ChartController.cs" />
     <Compile Include="Controllers\Collar\CollarController.cs" />
     <Compile Include="Controllers\Feeder\FeederController.cs" />
@@ -419,6 +416,7 @@
     <None Include=".bin\bower.cmd" />
     <None Include=".bin\git.cmd" />
     <None Include=".bin\node.cmd" />
+    <None Include="Properties\PublishProfiles\avn-group - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\avn-group - Web Deploy.pubxml" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\ControlSpec.js" />
@@ -480,7 +478,9 @@
     <Content Include="Scripts\StreetViewSpec.js" />
     <Content Include="Scripts\StyleSpec.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
