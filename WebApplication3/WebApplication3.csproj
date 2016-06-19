@@ -304,10 +304,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AzureController.cs" />
+    <Compile Include="Controllers\Collar\CollarController.cs" />
+    <Compile Include="Controllers\Feeder\FeederController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MyPage\MyPageController.cs" />
     <Compile Include="Controllers\TempController.cs" />
     <Compile Include="CustomerEntity.cs" />
+    <Compile Include="DataFil.cs" />
+    <Compile Include="DataTable.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -514,6 +521,9 @@
     <Content Include="Scripts\package.json" />
     <Content Include="Scripts\README.md" />
     <Content Include="Scripts\umd.hbs" />
+    <Content Include="Views\Collar\Index.cshtml" />
+    <Content Include="Views\Feeder\Index.cshtml" />
+    <Content Include="Views\MyPage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

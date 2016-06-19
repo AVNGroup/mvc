@@ -17,7 +17,6 @@ namespace WebApplication3.Controllers
 {
     public class HomeController : Controller
     {
-
         private const string HOST = "AVN-group.azure-devices.net";
         private const int PORT = 5671;
         private const string SHARED_ACCESS_KEY_NAME = "iothubowner";
@@ -89,12 +88,10 @@ namespace WebApplication3.Controllers
 
         [HttpPost]
         public async Task<ActionResult> Login(string Login, string Password) {
-           
-            //await RegistrationLogin.Registration(tableClient, Login_textBox.Text,Password_textBox1.Text);
-            // bool d = await RegistrationLogin.IsLoginAndPasswordCorrect(tableClient, Login_textBox.Text, Login_textBox.Text);
+
             if (await RegistrationLogin.IsLoginAndPasswordCorrect(tableClient, Login, Password))
             {
-                return Redirect("/Home/SuccessEnter");
+                return Redirect("/MyPage/Index");
             }
             else
             {
