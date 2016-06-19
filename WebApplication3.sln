@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishSc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{984C920A-91A6-4819-A44F-96103FF3A7F5}"
 	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureVMPublishModule.psm1 = PublishScripts\AzureVMPublishModule.psm1
 		PublishScripts\Configurations\WebApplication3-VM-dev.json = PublishScripts\Configurations\WebApplication3-VM-dev.json
 	EndProjectSection
 EndProject
@@ -31,6 +32,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{66007C00-3D31-4B75-9528-0E56A600018E} = {3FC2CAE2-4EEF-465B-9F55-CDC5034A6827}
 		{984C920A-91A6-4819-A44F-96103FF3A7F5} = {3FC2CAE2-4EEF-465B-9F55-CDC5034A6827}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

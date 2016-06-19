@@ -307,6 +307,10 @@
     <Compile Include="Controllers\AzureController.cs" />
     <Compile Include="Controllers\Collar\CollarController.cs" />
     <Compile Include="Controllers\Feeder\FeederController.cs" />
+    <Compile Include="Controllers\AzureController.cs" />
+    <Compile Include="Controllers\Chart\ChartController.cs" />
+    <Compile Include="Controllers\Collar\CollarController.cs" />
+    <Compile Include="Controllers\Feeder\FeederController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -382,6 +386,10 @@
     <Content Include="js_css\jquery.bxslider.min.js" />
     <Content Include="js_css\jquery.smartmenus.js" />
     <Content Include="js_css\jquery.smartmenus.min.js" />
+    <Content Include="js_css\js\Chart.bundle.js" />
+    <Content Include="js_css\js\Chart.bundle.min.js" />
+    <Content Include="js_css\js\Chart.js" />
+    <Content Include="js_css\js\Chart.min.js" />
     <Content Include="js_css\js\eskju.jquery.scrollflow.js" />
     <Content Include="js_css\js\eskju.jquery.scrollflow.min.js" />
     <Content Include="js_css\libs\jquery\jquery.js" />
@@ -408,6 +416,9 @@
     <Content Include="js_css\css\sm-clean\_sm-clean.scss" />
     <Content Include="js_css\css\sm-clean\mixins\_round-corners-last-item.scss" />
     <Content Include="js_css\css\sm-clean\mixins\_sub-items-indentation.scss" />
+    <None Include=".bin\bower.cmd" />
+    <None Include=".bin\git.cmd" />
+    <None Include=".bin\node.cmd" />
     <None Include="Properties\PublishProfiles\avn-group - Web Deploy.pubxml" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\ControlSpec.js" />
@@ -504,13 +515,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
-    <Content Include="Views\Home\ON.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\SuccessEnter.cshtml" />
     <Content Include="Views\Home\NotSuccessEnter.cshtml" />
     <Content Include="Views\Temp\Temp.cshtml" />
     <Content Include="Views\Temp\Index.cshtml" />
-    <Content Include="Views\Home\ON_viev.cshtml" />
     <Content Include="Views\Home\Index_ru.cshtml" />
     <Content Include="Views\Home\Index_ua.cshtml" />
     <Content Include="Views\Home\personal_account.cshtml" />
@@ -521,9 +530,6 @@
     <Content Include="Scripts\package.json" />
     <Content Include="Scripts\README.md" />
     <Content Include="Scripts\umd.hbs" />
-    <Content Include="Views\Collar\Index.cshtml" />
-    <Content Include="Views\Feeder\Index.cshtml" />
-    <Content Include="Views\MyPage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
