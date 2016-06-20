@@ -34,8 +34,8 @@ namespace WebApplication3.Controllers.Map
             string t;
             if (d.lat[0] == '0')
             {
-                t = "43.22440151";
-                l = "27.9371419";
+                t = "50.43921";
+                l = "30.49865";
             }
             else
             {

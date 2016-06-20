@@ -418,8 +418,7 @@
     <None Include=".bin\bower.cmd" />
     <None Include=".bin\git.cmd" />
     <None Include=".bin\node.cmd" />
-    <None Include="Properties\PublishProfiles\avn-group - Web Deploy %282%29.pubxml" />
-    <None Include="Properties\PublishProfiles\avn-group - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\avn-group - Web Deploy .pubxml" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\ControlSpec.js" />
     <Content Include="Scripts\eskju.jquery.scrollflow.js" />
@@ -438,6 +437,7 @@
     <Content Include="Scripts\gmaps.map_types.js" />
     <Content Include="Scripts\gmaps.markers.js" />
     <Content Include="Scripts\gmaps.min.js.map" />
+    <None Include="Properties\PublishProfiles\PuppyCare - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\gmaps.js" />
     <Content Include="Scripts\gmaps.min.js" />
@@ -533,6 +533,9 @@
     <Content Include="Scripts\README.md" />
     <Content Include="Scripts\umd.hbs" />
     <Content Include="Views\Map\Index.cshtml" />
+    <Content Include="Views\Feeder\Index.cshtml" />
+    <Content Include="Views\MyPage\Index.cshtml" />
+    <Content Include="Views\Collar\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

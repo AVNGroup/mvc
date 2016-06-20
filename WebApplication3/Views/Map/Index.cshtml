@@ -26,30 +26,40 @@
 
         google.maps.visualRefresh = true;
         // установка основных координат
-        var Moscow = new google.maps.LatLng(55.752622, 37.617567);
+        var Moscow = new google.maps.LatLng(50.44909364, 30.52893901);
 
         // Установка общих параметров отображения карты, как масштаб, центральная точка и тип карты
         var mapOptions = {
-            zoom: 15,
+            zoom: 12,
             center: Moscow,
             mapTypeId: google.maps.MapTypeId.G_NORMAL_MAP
         };
+        var directionsDisplay = new google.maps.DirectionsRenderer();
+        var directionsService = new google.maps.DirectionsService();
+        directionsDisplay.setMap(map);
+        directionsDisplay.setOptions({ suppressMarkers: true, suppressInfoWindows: true });
 
         // Встраиваем гугл-карты в элемент на странице и получаем объект карты
         var map = new google.maps.Map(document.getElementById("canvas"), mapOptions);
+        var lineSymbol = {
+            path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
+        };
+        var polyOptions = {
+            editable: false,
+            strokeColor: '#000000',
+            strokeOpacity: 0.8,
+            strokeWeight: 5,
+            icons: [{
+                icon: lineSymbol,
+                offset: '10%',
+                repeat: '200px'
+            }]
+        }
 
-        // Настраиваем красный маркер, который будет использоваться для центральной точки
-        var myLatlng = new google.maps.LatLng(55.752622, 37.617567);
-
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map,
-            title: 'Станции метро'
-        });
-
-        // Берем для маркера иконку с сайта google
-        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png')
-
+        poly = new google.maps.Polyline(polyOptions);
+        poly.setMap(map);
+        var path = poly.getPath();
+        
         // Получаем данные
         $.getJSON('@Url.Action("GetData","Map")', function (data) {
             // Проходим по всем данным и устанавливаем для них маркеры
@@ -72,8 +82,12 @@
                 google.maps.event.addListener(marker, 'click', function () {
                     infowindow.open(map, marker);
                 });
+                path.push(new google.maps.LatLng(50.44084019, 30.4897573));
+                path.push(new google.maps.LatLng(50.44291736, 30.4950788));
+                path.push(new google.maps.LatLng(50.43946675, 30.49878025));
             })
         });
+        
     }
     </script>
     }
