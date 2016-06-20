@@ -22,6 +22,9 @@ namespace WebApplication3.Controllers.MyPage
             else if (action == "Collar")
             {
                 return Redirect("/Collar/Index");
+            }if(action == "Map")
+            {
+                return Redirect("/Map/Index");
             }
             else
             {
