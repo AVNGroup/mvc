@@ -536,6 +536,7 @@
     <Content Include="Views\Feeder\Index.cshtml" />
     <Content Include="Views\MyPage\Index.cshtml" />
     <Content Include="Views\Collar\Index.cshtml" />
+    <Content Include="Views\Collar\Data.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

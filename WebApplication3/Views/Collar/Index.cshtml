@@ -3,5 +3,23 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Collar</h2>
+<div id="content"></div>
+<script type="text/javascript" src="~/js_css/libs/jquery/jquery.js"></script>  
+<script>
 
+        function show()
+        {
+            $.ajax({
+                url: '@Url.Action("Data", "Collar")',
+                cache: false,
+                success: function(html){
+                    $("#content").html(html);
+                }
+            });
+        }
+
+        $(document).ready(function(){
+            show();
+            setInterval('show()',1000);
+        });
+</script>  

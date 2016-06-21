@@ -34,14 +34,14 @@ namespace WebApplication3.Controllers.Feeder
         public async Task<ActionResult> OnWather()
         {
             serviceClient = ServiceClient.CreateFromConnectionString(connectionString);
-            //await SendCloudToDeviceMessageAsync("1");
+            await SendCloudToDeviceMessageAsync("1");
             return Redirect("/Feeder/Index");
 
         }
         public async Task<ActionResult> OffWather()
         {
             serviceClient = ServiceClient.CreateFromConnectionString(connectionString);
-           // await SendCloudToDeviceMessageAsync("-1");
+            await SendCloudToDeviceMessageAsync("-1");
             return Redirect("/Feeder/Index");
 
         }
