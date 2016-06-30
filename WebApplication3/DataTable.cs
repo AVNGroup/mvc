@@ -30,5 +30,7 @@ namespace WebApplication3.Controllers
         public string lon { get; set; }
 
         public string waterlevel { get; set; }
+
+        public string valuedatetime { get; set; }
     }
 }

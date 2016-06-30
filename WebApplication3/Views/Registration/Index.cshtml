@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Ajax.BeginForm("Сheck", "Registration", new AjaxOptions { UpdateTargetId = "results" }))
+{
+    <input type="text" name="ID" />
+    <input type="submit" value="Перевірити" />
+}
+<div id="results"></div>

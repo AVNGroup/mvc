@@ -89,7 +89,7 @@ namespace WebApplication3.Controllers
         [HttpPost]
         public async Task<ActionResult> Login(string Login, string Password) {
 
-            if (await RegistrationLogin.IsLoginAndPasswordCorrect(tableClient, Login, Password))
+            if (await RegistrationLogin.IsLoginAndPasswordCorrect(tableClient, "IdentityTable", Login, Password))
             {
                 return Redirect("/MyPage/Index");
             }

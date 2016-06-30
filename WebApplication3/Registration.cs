@@ -38,9 +38,9 @@ public class RegistrationLogin
         }
 
     }
-    static public async Task<bool> IsLoginAndPasswordCorrect(CloudTableClient tableClient, string id, string pasword)
+    static public async Task<bool> IsLoginAndPasswordCorrect(CloudTableClient tableClient,string tablename, string id, string pasword)
     {
-        CloudTable table = tableClient.GetTableReference("IdentityTable");
+        CloudTable table = tableClient.GetTableReference(tablename);
         TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>().Where(TableQuery.GenerateFilterCondition("ID", QueryComparisons.Equal, id));
         TableQuerySegment<CustomerEntity> list = await table.ExecuteQuerySegmentedAsync(query, null);
         if (list.Results.Count == 0)
@@ -58,5 +58,20 @@ public class RegistrationLogin
         }
         return proverka;
     }
-    
+    static public async Task<bool> IsIDDeviceCorrect(CloudTableClient tableClient, string tablename, string id)
+    {
+        CloudTable table = tableClient.GetTableReference(tablename);
+        TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>().Where(TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.Equal, id));
+        TableQuerySegment<CustomerEntity> list = await table.ExecuteQuerySegmentedAsync(query, null);
+        if (list.Results.Count == 0)
+        {
+            proverka = false;
+        }
+        else
+        {
+            proverka = true;
+        }
+        return proverka;
+    }
+
 }

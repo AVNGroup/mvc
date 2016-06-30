@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WebApplication3</RootNamespace>
     <AssemblyName>WebApplication3</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort>44300</IISExpressSSLPort>
@@ -26,6 +26,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <ApplicationInsightsResourceId>/subscriptions/6bd9575b-9b62-4089-95ad-103d6da86594/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/WebApplication3</ApplicationInsightsResourceId>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -147,7 +148,7 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.ServiceBus, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindowsAzure.ServiceBus.3.2.2\lib\net45-full\Microsoft.ServiceBus.dll</HintPath>
+      <HintPath>..\packages\WindowsAzure.ServiceBus.3.2.3\lib\net45-full\Microsoft.ServiceBus.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.WindowsAzure.Storage, Version=7.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -168,6 +169,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -187,15 +189,12 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -237,6 +236,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="Validation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7, processorArchitecture=MSIL">
       <HintPath>..\packages\Validation.2.0.6.15003\lib\portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\Validation.dll</HintPath>
       <Private>True</Private>
@@ -304,6 +304,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\AzureController.cs" />
     <Compile Include="Controllers\Chart\ChartController.cs" />
     <Compile Include="Controllers\Collar\CollarController.cs" />
@@ -313,6 +314,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Map\MapController.cs" />
     <Compile Include="Controllers\MyPage\MyPageController.cs" />
+    <Compile Include="Controllers\Registration\RegistrationController.cs" />
     <Compile Include="Controllers\TempController.cs" />
     <Compile Include="CustomerEntity.cs" />
     <Compile Include="DataFil.cs" />
@@ -323,6 +325,7 @@
     <Compile Include="fonts\Models\AccountViewModels.cs" />
     <Compile Include="fonts\Models\IdentityModels.cs" />
     <Compile Include="fonts\Models\ManageViewModels.cs" />
+    <Compile Include="Models\Devices.cs" />
     <Compile Include="Models\PersoneLoginInformation.cs" />
     <Compile Include="Models\PuppyMark.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -437,6 +440,10 @@
     <Content Include="Scripts\gmaps.map_types.js" />
     <Content Include="Scripts\gmaps.markers.js" />
     <Content Include="Scripts\gmaps.min.js.map" />
+    <None Include="Properties\PublishProfiles\PuppyCare - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\PuppyCare - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\PuppyCare - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\PuppyCare - Web Deploy %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\PuppyCare - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\gmaps.js" />
@@ -537,6 +544,9 @@
     <Content Include="Views\MyPage\Index.cshtml" />
     <Content Include="Views\Collar\Index.cshtml" />
     <Content Include="Views\Collar\Data.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Registration\Index.cshtml" />
+    <Content Include="Views\Registration\Сheck.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

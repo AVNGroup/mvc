@@ -42,10 +42,10 @@ namespace WebApplication3.Controllers
             DateTimeOffset sa = new DateTimeOffset();
             for(int i = 0; i < list.Results.Count; i++)
             {
-                if(list.Results[i].Timestamp > sa)
+                if(Convert.ToDateTime(list.Results[i].valuedatetime) > sa)
                 {
                     max = i;
-                    sa = list.Results[i].Timestamp;
+                    sa = Convert.ToDateTime(list.Results[i].valuedatetime);
                 }
             }
             return list.Results[max];
