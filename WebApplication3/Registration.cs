@@ -73,5 +73,20 @@ public class RegistrationLogin
         }
         return proverka;
     }
+    static public async Task<bool> IsLoginCorrect(CloudTableClient tableClient, string tablename, string id, string pasword)
+    {
+        CloudTable table = tableClient.GetTableReference(tablename);
+        TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>().Where(TableQuery.GenerateFilterCondition("ID", QueryComparisons.Equal, id));
+        TableQuerySegment<CustomerEntity> list = await table.ExecuteQuerySegmentedAsync(query, null);
+        if (list.Results.Count == 0)
+        {
+            proverka = true;
+        }
+        else
+        {
+           proverka = false;
+        }
+        return proverka;
+    }
 
 }

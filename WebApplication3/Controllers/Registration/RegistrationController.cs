@@ -48,8 +48,28 @@ namespace WebApplication3.Controllers.Registration
             }
             else
             {
+                return Redirect("/Home/NotSuccessEnter"); 
+            }
+        }
+        public async Task<ActionResult> AddUsers(string login, string password)
+        {
+            if (await RegistrationLogin.IsLoginCorrect(tableClient, "IdentityTable", login, password))
+            {
+                serviceClient = ServiceClient.CreateFromConnectionString(connectionString);
+                CloudTable table = tableClient.GetTableReference("IdentityTable");
+
+                CustomerEntity customer = new CustomerEntity(login, login);
+                customer.ID = login;
+                customer.Password = password;
+                TableOperation insertOPeration = TableOperation.Insert(customer);
+                table.Execute(insertOPeration);
+                return View();
+            }
+            else
+            {
                 return Redirect("/Home/NotSuccessEnter");
             }
         }
+        
     }
 }
