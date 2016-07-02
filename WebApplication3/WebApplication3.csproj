@@ -550,6 +550,8 @@
     <Content Include="Views\Registration\Index.cshtml" />
     <Content Include="Views\Registration\Сheck.cshtml" />
     <Content Include="Views\Registration\AddUsers.cshtml" />
+    <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Chart\PaintChar.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

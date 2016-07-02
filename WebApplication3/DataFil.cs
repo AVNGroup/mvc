@@ -50,5 +50,20 @@ namespace WebApplication3.Controllers
             }
             return list.Results[max];
         }
+        public static async Task<List<DataTable>> InfaCount(CloudTableClient tableClient, string typeData, int count)
+        {
+            CloudTable table = tableClient.GetTableReference("DataStreamFromHub");
+            TableQuery<DataTable> query = new TableQuery<DataTable>().Where(TableQuery.GenerateFilterCondition("valueid", QueryComparisons.Equal, "RaspberryData"));
+
+            TableQuerySegment<DataTable> list = await table.ExecuteQuerySegmentedAsync(query, null);
+            List<DataTable> results = new List<DataTable>();
+
+            list.Results.Sort((a, b) => a.valuedatetime.CompareTo(b.valuedatetime));
+            for (int i = list.Results.Count - count; i < list.Results.Count; i++)
+            {
+                results.Add(list.Results[i]);
+            }
+            return results;
+        }
     }
 }

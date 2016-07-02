@@ -1,0 +1,12 @@
+﻿
+<script type="text/javascript" src="~/Scripts/Chart.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery-2.2.3.js"></script>
+
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
+<h1>Введіть кількість даних на графіку</h1>
+@using (Ajax.BeginForm("PaintChar", "Chart", new AjaxOptions { UpdateTargetId = "results1" }))
+{
+    <input type="text" name="count" />
+    <input type="submit" value="Побудувати" />
+}
+<div id="results1"></div>

@@ -25,11 +25,15 @@ namespace WebApplication3.Controllers.MyPage
             }if(action == "Map")
             {
                 return Redirect("/Map/Index");
+            }else if (action == "Chart")
+            {
+                return Redirect("/Chart/Index");
             }
             else
             {
                 return Redirect("/Home/SuccessEnter");
             }
         }
+        
     }
 }
