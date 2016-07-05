@@ -552,6 +552,7 @@
     <Content Include="Views\Registration\AddUsers.cshtml" />
     <Content Include="Views\Chart\Index.cshtml" />
     <Content Include="Views\Chart\PaintChar.cshtml" />
+    <Content Include="Scripts\MachineLearningAlgor.json" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -26,7 +26,7 @@ namespace WebApplication3.Controllers
         private const string SHARED_ACCESS_KEY_NAME = "iothubowner";
         private const string SHARED_ACCESS_KEY = "jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
         static ServiceClient serviceClient;
-        static string connectionString = "HostName=AVN-group.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
+        public static string connectionString = "HostName=AVN-group.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
         public static string accountName = "avngroupf";
         public static string accountKey = "sQe3fgEb8Vrn6OWXs1ZvM/zhIlQmwrGLw2RSsO98htfwjiCD0cENbE9xCCBrH+qCi2T29WmNCOVyiu9AncbYNg==";
         public static StorageCredentials creds = new StorageCredentials(accountName, accountKey);
@@ -35,8 +35,12 @@ namespace WebApplication3.Controllers
         bool red = true;
         static private readonly long UtcReference = (new DateTime(1970, 1, 1, 0, 0, 0, 0)).Ticks;
 
+        // Parse the connection string and return a reference to the storage account
+        public static CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting(connectionString));
+        CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 
-    
+
+
 
         private async static Task SendCloudToDeviceMessageAsync(string comand)
         {
@@ -148,4 +152,31 @@ namespace WebApplication3.Controllers
             return View();
         }
     }
+
+    //The DownloadToStream method was used to download the contents of a blob as a text string
+    public ActionResult downloadBlobs() {
+
+        // Retrieve storage account from connection string.
+        CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+            CloudConfigurationManager.GetSetting(connectionString));
+
+        // Create the blob client.
+        CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+
+        // Retrieve reference to a previously created container.
+        CloudBlobContainer container = blobClient.GetContainerReference("mycontainer");
+
+        // Retrieve reference to a blob named "myblob.txt"
+        CloudBlockBlob blockBlob2 = container.GetBlockBlobReference("myblob.txt");
+
+        string text;
+        using (var memoryStream = new MemoryStream())
+        {
+            blockBlob2.DownloadToStream(memoryStream);
+            text = System.Text.Encoding.UTF8.GetString(memoryStream.ToArray());
+        }
+
+        return View();
+    }
+
 }
