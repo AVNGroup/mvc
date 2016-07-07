@@ -16,6 +16,7 @@ using Chart;
 using Microsoft.Azure; // Namespace for CloudConfigurationManager
 using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
 using Microsoft.WindowsAzure.Storage.Blob; // Namespace for Blob storage types
+using System.IO;
 
 namespace WebApplication3.Controllers
 {
