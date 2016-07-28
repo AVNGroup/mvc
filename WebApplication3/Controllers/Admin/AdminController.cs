@@ -32,6 +32,7 @@ namespace WebApplication3.Controllers.Admin
         // GET: Admin
         public ActionResult Index()
         {
+            //ViewData["type"] = HttpContext.Request.Cookies["id"].Value;
             return View();
         }
         public async Task<ActionResult> Delete()
@@ -54,6 +55,13 @@ namespace WebApplication3.Controllers.Admin
             TableOperation insertOPeration = TableOperation.Insert(customer);
             table.Execute(insertOPeration);
             return Redirect("/Admin/Index");
+        }
+        public  ActionResult Сheck(string ID)
+        {
+
+            ViewData["type"] = ID;
+            return View();
+
         }
     }
 }

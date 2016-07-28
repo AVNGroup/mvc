@@ -33,60 +33,14 @@ namespace WebApplication3.Controllers
         public static StorageCredentials creds = new StorageCredentials(accountName, accountKey);
         public static CloudStorageAccount account = new CloudStorageAccount(creds, useHttps: true);
         CloudTableClient tableClient = account.CreateCloudTableClient();
-        bool red = true;
         static private readonly long UtcReference = (new DateTime(1970, 1, 1, 0, 0, 0, 0)).Ticks;
 
         // Parse the connection string and return a reference to the storage account
-        public static CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting(connectionString));
-        CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
-
-
-
-
-        private async static Task SendCloudToDeviceMessageAsync(string comand)
-        {
-            var commandMessage = new Message(Encoding.ASCII.GetBytes(comand));
-            await serviceClient.SendAsync("RaspberyData", commandMessage);
-        }
+       // public static CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting(connectionString));
+      //  CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
-        }
-        [HttpPost]
-        public string About(string sd)
-        {
-
-            ViewBag.s = sd;
-            
-            return sd;
-        }
-        
-        public async Task<ActionResult>  ON_viev()
-        {
-            return View();
-
-        }
-        public async Task<ActionResult> ON()
-        {
-            ViewBag.inta = "sdfsdf";
-            serviceClient = ServiceClient.CreateFromConnectionString(connectionString);
-            await SendCloudToDeviceMessageAsync("1");
-            return Redirect("/Home/ON_viev");
-
-        }
-
-
-        public async Task<ActionResult> OFF()
-        {
-            serviceClient = ServiceClient.CreateFromConnectionString(connectionString);
-            await SendCloudToDeviceMessageAsync("-1");
-            return Redirect("/Home/Index");        
-        }
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
 
@@ -98,6 +52,8 @@ namespace WebApplication3.Controllers
         [HttpPost]
         public async Task<ActionResult> Login(string Login, string Password) {
 
+
+            //HttpContext.Response.Cookies["id"].Value = Login;
             if (await RegistrationLogin.IsLoginAndPasswordCorrect(tableClient, "IdentityTable", Login, Password))
             {
                 return Redirect("/MyPage/Index");

@@ -599,13 +599,14 @@
     <Content Include="Views\MyPage\Index.cshtml" />
     <Content Include="Views\Collar\Index.cshtml" />
     <Content Include="Views\Collar\Data.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Registration\Index.cshtml" />
     <Content Include="Views\Registration\Сheck.cshtml" />
     <Content Include="Views\Registration\AddUsers.cshtml" />
     <Content Include="Views\Chart\Index.cshtml" />
     <Content Include="Views\Chart\PaintChar.cshtml" />
     <Content Include="Scripts\MachineLearningAlgor.json" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Сheck.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
