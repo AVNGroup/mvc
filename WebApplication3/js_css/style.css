@@ -107,7 +107,7 @@
 		height: 120%;
 		width: 100%;
 		background-image: url("images/iot.jpg");
-		background-size: 100% 100%;
+		background-size: auto 100%;
 	}
 footer {
 	height:250px;
@@ -121,25 +121,30 @@ footer {
 .footerLeft {
 	color:#fff;
 	float:left;
-	width:27.6%;
+	width:25%;
 	height:auto;
 	border-right:1px solid #fff;
-	margin-top:5%;
+	margin-top:0%;
 	padding-top:2%;
+    padding-right:3%;
 }
 
 .footerLeft ul li{
-	display:inline;
+	display:block;
 	text-transform:uppercase;
 	list-style:none;
 	margin-right:2%;
+    padding-left:65%;
 }
-
+.icons {
+    padding-top:2%;
+}
 .footerLeft ul li a {
 	font-size:.8em;
 	color:#fff;
 	text-decoration:none;
 	font-weight:bold;
+ 
 }
 
 .footerLeft ul li a:hover {
@@ -153,11 +158,11 @@ footer {
 
 .contact {
 	float:left;
-	margin-top:5%;
-	padding:2% 2% 0 2%;
+	margin-top:0%;
+	padding:3.5% 2% 0 2%;
 }
 .twitter {
-	width: 35%;
+	width: 50%;
 	height:150px;
 	float:left;
 	margin-top:5%;
@@ -223,3 +228,14 @@ background: #4cd964 !important;
 {
 left: 62px !important;
 }
+@media screen and (max-width: 700px) {
+    .footerLeft {
+        width: 45%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .footerLeft ul li {
+            padding-left: 27%;
+        }
+}
+      
