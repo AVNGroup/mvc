@@ -14,7 +14,7 @@
     <nav id="main-nav" role="navigation">
         <!-- Sample menu definition -->
         <ul id="main-menu" class="sm sm-clean">
-            <li><a href="#"><img src="~/js_css/images/logo2.png" style="width:120px;height:auto;padding:0px;margin:0px;bottom:1px"> </a></li>
+            <li><a href="~/Home/index"><img src="~/js_css/images/logo2.png" style="width:120px;height:auto;padding:0px;margin:0px;bottom:1px"> </a></li>
             <li>
                 <a href="http://www.smartmenus.org/about/">About</a>
                 <ul>
@@ -68,19 +68,21 @@
         @Scripts.Render("~/js_css/libs/jquery/jquery.js")
         @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
             
-            <div style="padding:10px">
-                <p style="font-size:2em">Step 1</p>
-                <p style="font-size:1.5em">Enter your module ID</p>
+            <div id="results1">
+                @using (Ajax.BeginForm("Сheck", "Registration", new AjaxOptions { UpdateTargetId = "results1" }))
+                {
+
+                    <div style="padding:10px">
+                        <p style="font-size:2em">Step 1</p>
+                        <p style="font-size:1.5em">Enter your module ID</p>
+                    </div>
+                    <div style="padding-bottom:10px">
+                        <input type="text" name="ID" /><br />
+                    </div>
+                    <input type="submit" value="Check" />
+
+                }
             </div>
-        @using (Ajax.BeginForm("Сheck", "Registration", new AjaxOptions { UpdateTargetId = "results1" }))
-        {
-            <div style="padding-bottom:10px">
-            <input type="text" name="ID" /><br />
-                </div>
-            <input type="submit" value="Check" />
-        }
-        <div id="results1"></div>
-        <div id="results2"></div>
 
         @{
             ViewBag.Title = "Login";

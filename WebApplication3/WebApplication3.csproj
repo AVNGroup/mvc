@@ -616,6 +616,7 @@
     <Content Include="Scripts\MachineLearningAlgor.json" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Сheck.cshtml" />
+    <Content Include="Views\Collar\Collar.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

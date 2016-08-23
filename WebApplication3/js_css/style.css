@@ -228,14 +228,270 @@ background: #4cd964 !important;
 {
 left: 62px !important;
 }
+.CategorieOne{
+    float:left;
+    background-image:url("images/feeder.png") ;
+    background-size: 61.4% 100%;
+    background-position:center;
+    background-repeat:no-repeat;
+    height:300px; 
+    width:100%;
+}
+.CategorieTwo{
+    float:left;
+    background-image:url("images/colar.png") ;
+    background-size: 100% 52.5%;
+    background-position:center;
+    background-repeat:no-repeat;
+    height:300px; 
+    width:100%;
+}
+.CategorieThree{
+    float:left;
+    background-image:url("images/bed.png") ;
+    background-size: 100% 59.15%;
+    background-position:center;
+    background-repeat:no-repeat;
+    height:300px; 
+    width:100%;
+}
+.CategorieFour{
+    float:left;
+    background-image:url("images/1457055658_App_Development_icon-icons.com_54712.png") ;
+    background-size: 100% 100%;
+    background-position:center;
+    background-repeat:no-repeat;
+    height:300px; 
+    width:100%;
+}
+.CategorieText{
+    float:none;
+    height:130px;
+    width:100%;
+    margin-top:300px;
+    background:#99bbbf;
+    border-top:1px solid #999999;
+    text-align:center;
+    color:white;
+}
+.CategorieBlock{
+    float:left;
+    width:20%;
+    height:auto;
+    margin-left:4%; 
+    border:1px solid #999999;
+}
+.CategorieBlockThree{
+    float:left;
+    width:20%;
+    height:auto;
+    margin-left:4%; 
+    border:1px solid #999999;
+}
+.CategorieBlockTwo{
+    float:left;
+    width:20%;
+    height:auto;
+    margin-left:4%; 
+    border:1px solid #999999;
+}
+
+
+.CategorieOneCollar{
+    float:left;
+    background-image:url("images/18-3291.png") ;
+    background-size: 100% 100%;
+    background-position:center;
+    background-repeat:no-repeat;
+    height:300px; 
+    width:100%;
+}
+.CategorieTwoCollar{
+    float:left;
+    background-image:url("images/City.jpg") ;
+    background-size: 100% 80.4%;
+    background-position:center;
+    background-repeat:no-repeat;
+    height:300px; 
+    width:100%;
+}
+.CategorieThreeCollar{
+    float:left;
+    background-image:url("images/clip4045.jpg") ;
+    background-size: 100% 75%;
+    background-position:center;
+    background-repeat:no-repeat;
+    height:300px; 
+    width:100%;
+}
+.CategorieTextCollar{
+    float:none;
+    height:130px;
+    width:100%;
+    margin-top:300px;
+    background:#99bbbf;
+    border-top:1px solid #999999;
+    text-align:center;
+    color:white;
+}
+.CategorieBlockCollar{
+    float:left;
+    width:29%;
+    height:auto;
+    margin-left:3%; 
+    border:1px solid #999999;
+}
+.CategorieBlockCollarOne{
+    float:left;
+    width:29%;
+    height:auto;
+    margin-left:3%; 
+    border:1px solid #999999;
+}
+.CategorieBlockCollarThree{
+    float:left;
+    width:29%;
+    height:auto;
+    margin-left:3%; 
+    border:1px solid #999999;
+}
+
+
 @media screen and (max-width: 700px) {
     .footerLeft {
         width: 45%;
     }
+ 
 }
 @media screen and (max-width: 500px) {
     .footerLeft ul li {
             padding-left: 27%;
         }
 }
+    @media screen and (max-width: 480px) {
+
+        .CategorieBlockCollar{
+    width:80%;
+    margin-left:10%;
+    margin-top:150px;
+}
+        .CategorieBlockCollarOne {
+            width: 80%;
+            margin-left: 10%;
+        }
+        .CategorieBlockCollarThree{
+    width:80%;
+    margin-left:10%;
+    margin-top:150px;
+}
+
+
+        .CategorieBlockThree {
+            
+            width: 80%;
+            margin-left: 10%;
       
+        }
+         .CategorieBlockTwo {
+            
+            width: 80%;
+            margin-left: 10%;
+            margin-top:150px;
+        }
+        .CategorieBlock {
+   
+            width: 80%;
+            margin-left: 10%;
+            margin-top:150px;
+        }
+}
+@media screen and (max-width: 800px) {
+    @media screen and (min-width: 480px) {
+        .CategorieBlockCollar{
+    width:44%;
+    margin-left:4%;
+   
+}
+                .CategorieBlockCollarOne{
+    width:44%;
+    margin-left:4%;
+   
+}
+        .CategorieBlockCollarThree{
+    width:44%;
+    margin-top:150px;
+    margin-left:28%;
+}
+   
+        .CategorieBlockThree {
+           width: 44%;
+            margin-left: 4%;
+ 
+        }
+                .CategorieBlockTwo {
+           width: 44%;
+            margin-left: 4%;
+        }
+
+        .CategorieBlock {
+            width: 44%;
+            margin-left: 4%;
+             margin-top:150px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    @media screen and (min-width: 900px) {
+        #myChart {
+            width:750px;
+            height:400px;
+        }
+    }
+}
+@media screen and (max-width: 900px) {
+    @media screen and (min-width: 800px) {
+                #myChart {
+            width:700px;
+            height:400px;
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    @media screen and (min-width: 700px) {
+                #myChart {
+            width:600px;
+            height:400px;
+        }
+    }
+}
+@media screen and (max-width: 700px) {
+    @media screen and (min-width: 600px) {
+        #myChart {
+            width:500px;
+          height:400px;
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    @media screen and (min-width: 500px) {
+        #myChart {
+            width:450px;
+          height:400px;
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    @media screen and (min-width: 400px) {
+        #myChart {
+            width:350px;
+            height:400px;
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+         #myChart {
+            width:300px;
+            height:400px;
+        } 
+}

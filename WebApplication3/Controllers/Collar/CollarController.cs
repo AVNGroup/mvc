@@ -31,5 +31,9 @@ namespace WebApplication3.Controllers.Collar
             ViewData["Rand"] = rand.Next(10,50).ToString();
             return View();
         }
+        public ViewResult Collar()
+        {
+            return View();
+        }
     }
 }
