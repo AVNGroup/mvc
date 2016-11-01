@@ -8,6 +8,7 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Table;
 namespace WebApplication3.Controllers.Collar
+    using Microsoft.VisualBasic.ApplicationServices;
 {
     public class CollarController : Controller
     {
@@ -19,6 +20,8 @@ namespace WebApplication3.Controllers.Collar
         }
         public async Task<ActionResult> Data()
         {
+            ApplicationBase ApplicationVariable = new ApplicationBase();
+            string s = ApplicationVariable.GetEnvironmentVariable("TEST");
             string accountName = "avngroupf";
             string accountKey = "sQe3fgEb8Vrn6OWXs1ZvM/zhIlQmwrGLw2RSsO98htfwjiCD0cENbE9xCCBrH+qCi2T29WmNCOVyiu9AncbYNg==";
             StorageCredentials creds = new StorageCredentials(accountName, accountKey);
@@ -28,7 +31,7 @@ namespace WebApplication3.Controllers.Collar
             Random rand = new Random();
             ViewData["Temp"] = d.valuetemp;
             ViewData["Coord"] = d.lat + "/" + d.lon;
-            ViewData["Rand"] = rand.Next(10,50).ToString();
+            ViewData["Rand"] = s;
             return View();
         }
         public ViewResult Collar()

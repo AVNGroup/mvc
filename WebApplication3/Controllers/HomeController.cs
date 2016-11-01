@@ -17,7 +17,7 @@ using Microsoft.Azure; // Namespace for CloudConfigurationManager
 using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
 using Microsoft.WindowsAzure.Storage.Blob; // Namespace for Blob storage types
 using System.IO;
-
+using Microsoft.VisualBasic.ApplicationServices;
 namespace WebApplication3.Controllers
 {
     public class HomeController : Controller
@@ -54,6 +54,7 @@ namespace WebApplication3.Controllers
 
 
             //HttpContext.Response.Cookies["id"].Value = Login;
+
             if (await RegistrationLogin.IsLoginAndPasswordCorrect(tableClient, "IdentityTable", Login, Password))
             {
                 return Redirect("/MyPage/Index");
