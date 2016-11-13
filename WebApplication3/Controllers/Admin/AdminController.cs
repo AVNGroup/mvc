@@ -35,27 +35,6 @@ namespace WebApplication3.Controllers.Admin
             //ViewData["type"] = HttpContext.Request.Cookies["id"].Value;
             return View();
         }
-        public async Task<ActionResult> Delete()
-        {
-            serviceClient = ServiceClient.CreateFromConnectionString(connectionString);
-            CloudTable table = tableClient.GetTableReference("Users");
-
-            CustomerEntity customer = new CustomerEntity("collar", "Test1");
-            TableOperation insertOPeration = TableOperation.Insert(customer);
-            table.Execute(insertOPeration);
-
-            return Redirect("/Admin/Index");
-        }
-        public async Task<ActionResult> Login(string Login, string Password)
-        {
-            serviceClient = ServiceClient.CreateFromConnectionString(connectionString);
-            CloudTable table = tableClient.GetTableReference("Users");
-
-            CustomerEntity customer = new CustomerEntity(Login, Password);
-            TableOperation insertOPeration = TableOperation.Insert(customer);
-            table.Execute(insertOPeration);
-            return Redirect("/Admin/Index");
-        }
         public  ActionResult Сheck(string ID)
         {
 
