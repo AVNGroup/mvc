@@ -9,7 +9,9 @@ using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Table;
 using Microsoft.Azure.Devices;
 using System.Text;
-
+using WebApplication3.Models;
+using System.Web.Caching;
+using System.Web.UI;
 
 namespace WebApplication3.Controllers.Admin
 {
@@ -35,10 +37,19 @@ namespace WebApplication3.Controllers.Admin
             //ViewData["type"] = HttpContext.Request.Cookies["id"].Value;
             return View();
         }
+        static int x = 9;
+
+        //[OutputCache(Duration = 30, Location = OutputCacheLocation.Downstream)]
         public  ActionResult Сheck(string ID)
         {
+            //CloudTable table = tableClient.GetTableReference("Route");
 
-            ViewData["type"] = ID;
+            //Route route1 = new Route();
+
+            //TableOperation insert = TableOperation.Insert(route1);
+            //table.Execute(insert);
+            x++;
+            ViewData["type"] = x.ToString();             
             return View();
 
         }

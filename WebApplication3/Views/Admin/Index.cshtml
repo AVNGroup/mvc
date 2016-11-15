@@ -7,8 +7,8 @@
 
 @Scripts.Render("~/js_css/libs/jquery/jquery.js")
 @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
-<h1>ID модуля правильне!!! Тип модуля @ViewData["type"]</h1>
-<h1>Введіть ID модуля</h1>
+@*<h1>ID модуля правильне!!! Тип модуля @ViewData["type"]</h1>
+<h1>Введіть ID модуля</h1>*@
 @*@using (Ajax.BeginForm("Сheck", "Admin", new AjaxOptions { UpdateTargetId = "results1" }))
 {
     <input type="text" name="ID" />
@@ -16,7 +16,10 @@
 }*@
 @using (Ajax.BeginForm("Сheck", "Admin", new AjaxOptions { UpdateTargetId = "results1" }))
 {
-    <input type="text" name="ID" />
+    <h1>Введіть назву маршруту</h1>
+    <input type="text" name="NameRoute" />
+    <h1>Введіть назву маршруту</h1>
+    <input type="text" name="NameRoute" />
     <input type="submit" value="Перевірити" />
 }
 <div id="results1"></div>

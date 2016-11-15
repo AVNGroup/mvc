@@ -15,10 +15,23 @@ namespace WebApplication3.Controllers.Collar
     public class CollarController : Controller
     {
         // GET: Collar
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            
-            return View();
+            try
+            {
+                if (await RegistrationLogin.IsLoginAndPasswordCorrect(HttpContext.Request.Cookies["Login"].Value, HttpContext.Request.Cookies["Password"].Value))
+                {
+                    return View();
+                }
+                else
+                {
+                    return Redirect("/Home/Login");
+                }
+            }
+            catch (System.NullReferenceException)
+            {
+                return Redirect("/Home/Login");
+            }
         }
         public async Task<ActionResult> Data()
         {
