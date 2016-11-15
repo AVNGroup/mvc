@@ -47,7 +47,7 @@ namespace WebApplication3.Controllers.Registration
                 ViewData["type"] = list.Results[0].PartitionKey;
 
                 Table_dataSource.createTableInAzure();
-
+                
                 return View();
             }
             else

@@ -391,6 +391,7 @@
     <Compile Include="Models\Devices.cs" />
     <Compile Include="Models\PersoneLoginInformation.cs" />
     <Compile Include="Models\PuppyMark.cs" />
+    <Compile Include="Models\Route.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration.cs" />
     <Compile Include="SHA.cs" />

@@ -57,6 +57,8 @@ namespace WebApplication3.Controllers
 
             if (await RegistrationLogin.IsLoginAndPasswordCorrect(tableClient, "IdentityTable", Login, Password))
             {
+                HttpContext.Response.Cookies["Login"].Value = Login;
+                HttpContext.Response.Cookies["Password"].Value = Password;
                 return Redirect("/MyPage/Index");
             }
             else
