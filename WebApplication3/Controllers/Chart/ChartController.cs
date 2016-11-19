@@ -53,7 +53,21 @@ namespace WebApplication3.Controllers.Chart
 
             ViewBag.intArray = test;
             ViewBag.sringArray = test2;
-            return View();
+            try
+            {
+                if (await RegistrationLogin.IsLoginAndPasswordCorrect(HttpContext.Request.Cookies["Login"].Value, HttpContext.Request.Cookies["Password"].Value))
+                {
+                    return View();
+                }
+                else
+                {
+                    return Redirect("/Home/Login");
+                }
+            }
+            catch (System.NullReferenceException)
+            {
+                return Redirect("/Home/Login");
+            }
         }
     }
 }

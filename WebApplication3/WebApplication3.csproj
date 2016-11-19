@@ -507,9 +507,11 @@
     <None Include="Properties\PublishProfiles\puppycare - FTP %286%29.pubxml" />
     <None Include="Properties\PublishProfiles\puppycare - FTP %287%29.pubxml" />
     <None Include="Properties\PublishProfiles\puppycare - FTP %288%29.pubxml" />
+    <None Include="Properties\PublishProfiles\puppycare - FTP %289%29.pubxml" />
     <None Include="Properties\PublishProfiles\PuppyCare - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\puppycare - Web Deploy %2810%29.pubxml" />
     <None Include="Properties\PublishProfiles\puppycare - Web Deploy %2811%29.pubxml" />
+    <None Include="Properties\PublishProfiles\puppycare - Web Deploy %2812%29.pubxml" />
     <None Include="Properties\PublishProfiles\PuppyCare - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\PuppyCare - Web Deploy %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\PuppyCare - Web Deploy %284%29.pubxml" />

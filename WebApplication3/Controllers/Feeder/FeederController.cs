@@ -49,14 +49,44 @@ namespace WebApplication3.Controllers.Feeder
         {
             serviceClient = ServiceClient.CreateFromConnectionString(connectionString);
             await SendCloudToDeviceMessageAsync("1");
-            return Redirect("/Feeder/Index");
+            try
+            {
+                if (await RegistrationLogin.IsLoginAndPasswordCorrect(HttpContext.Request.Cookies["Login"].Value, HttpContext.Request.Cookies["Password"].Value))
+                {
+                    return Redirect("/Feeder/Index");
+                }
+                else
+                {
+                    return Redirect("/Home/Login");
+                }
+            }
+            catch (System.NullReferenceException)
+            {
+                return Redirect("/Home/Login");
+            }
+           
 
         }
         public async Task<ActionResult> OffWather()
         {
             serviceClient = ServiceClient.CreateFromConnectionString(connectionString);
             await SendCloudToDeviceMessageAsync("-1");
-            return Redirect("/Feeder/Index");
+            try
+            {
+                if (await RegistrationLogin.IsLoginAndPasswordCorrect(HttpContext.Request.Cookies["Login"].Value, HttpContext.Request.Cookies["Password"].Value))
+                {
+                    return Redirect("/Feeder/Index");
+                }
+                else
+                {
+                    return Redirect("/Home/Login");
+                }
+            }
+            catch (System.NullReferenceException)
+            {
+                return Redirect("/Home/Login");
+            }
+
 
         }
         private async static Task SendCloudToDeviceMessageAsync(string comand)
