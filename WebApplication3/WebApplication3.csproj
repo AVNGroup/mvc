@@ -521,6 +521,8 @@
     <None Include="Properties\PublishProfiles\puppycare - Web Deploy %288%29.pubxml" />
     <None Include="Properties\PublishProfiles\puppycare - Web Deploy %289%29.pubxml" />
     <None Include="Properties\PublishProfiles\PuppyCare - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\puppycare-ivan - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\puppycare-ivan - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\gmaps.js" />
     <Content Include="Scripts\gmaps.min.js" />

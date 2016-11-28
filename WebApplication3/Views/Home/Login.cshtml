@@ -8,35 +8,8 @@
 </head>
 <body>
     <nav id="main-nav" role="navigation">
-        <!-- Sample menu definition -->
         <ul id="main-menu" class="sm sm-clean">
             <li><a href="~/views/home/index.cshtml"><img src="~/js_css/images/logo2.png" style="width:120px;height:auto;padding:0px;margin:0px;bottom:1px"> </a></li>
-            <li>
-                <a href="http://www.smartmenus.org/about/">About</a>
-                <ul>
-                    <li><a href="http://www.smartmenus.org/about/introduction-to-smartmenus-jquery/">Introduction to SmartMenus jQuery</a></li>
-                    <li><a href="http://www.smartmenus.org/about/themes/">Themes</a></li>
-                    <li><a href="http://vadikom.com/about/#vasil-dinkov">The author</a></li>
-                    <li>
-                        <a href="http://www.smartmenus.org/about/vadikom/">The company</a>
-                        <ul>
-                            <li><a href="http://vadikom.com/about/">About Vadikom</a></li>
-                            <li><a href="http://vadikom.com/projects/">Projects</a></li>
-                            <li><a href="http://vadikom.com/services/">Services</a></li>
-                            <li><a href="http://www.smartmenus.org/about/vadikom/privacy-policy/">Privacy policy</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="http://www.smartmenus.org/download/">Download</a></li>
-            <li>
-                <a href="http://www.smartmenus.org/support/">Support</a>
-                <ul>
-                    <li><a href="http://www.smartmenus.org/support/premium-support/">Premium support</a></li>
-                    <li><a href="http://www.smartmenus.org/support/forums/">Forums</a></li>
-                </ul>
-            </li>
-            <li><a href="http://www.smartmenus.org/docs/">Docs</a></li>
             <li>
                 @Html.ActionLink("Personal Account", "Login", "Home")
             </li>
@@ -44,7 +17,6 @@
                 <a href="#">Language</a>
                 <ul class="mega-menu">
                     <li>
-                        <!-- The mega drop down contents -->
                         <div style="width:400px;max-width:100%;">
                             <div style="padding:5px 24px;">
                                 <table>

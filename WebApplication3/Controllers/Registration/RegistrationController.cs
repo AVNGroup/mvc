@@ -12,13 +12,15 @@ using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Table;
 using WebApplication3.Models;
 using WebApplication3.Libraries_created;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace WebApplication3.Controllers.Registration
 {
     public class RegistrationController : Controller
     {
         static ServiceClient serviceClient;
-        static string connectionString = "HostName=AVN-group.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
+        static ApplicationBase ApplicationVariable = new ApplicationBase();
+        static string connectionString = ApplicationVariable.GetEnvironmentVariable("connectionString"); //"HostName=AVN-group.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
         public static string accountName = "avngroupf";
         public static string accountKey = "sQe3fgEb8Vrn6OWXs1ZvM/zhIlQmwrGLw2RSsO98htfwjiCD0cENbE9xCCBrH+qCi2T29WmNCOVyiu9AncbYNg==";
         public static StorageCredentials creds = new StorageCredentials(accountName, accountKey);
