@@ -123,17 +123,29 @@
   <data name="Contact" xml:space="preserve">
     <value>Contact</value>
   </data>
+  <data name="GoInAccount" xml:space="preserve">
+    <value>Go In Your Account</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Hello, </value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Language</value>
   </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>LogOff</value>
+  </data>
   <data name="PCAccount" xml:space="preserve">
     <value>Use your Puppy Care project account</value>
   </data>
   <data name="PersonalAccount" xml:space="preserve">
     <value>Personal Account</value>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>Registration</value>
   </data>
   <data name="SignIn" xml:space="preserve">
     <value>Sign in</value>

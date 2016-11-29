@@ -123,17 +123,29 @@
   <data name="Contact" xml:space="preserve">
     <value>Контакти</value>
   </data>
+  <data name="GoInAccount" xml:space="preserve">
+    <value>Ввійти в аккаунт</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Привіт, </value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Мова</value>
   </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Вийти</value>
+  </data>
   <data name="PCAccount" xml:space="preserve">
     <value>Використовуй свій Puppy Care аккаунт</value>
   </data>
   <data name="PersonalAccount" xml:space="preserve">
     <value>Персональний акаунт</value>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>Регістрація</value>
   </data>
   <data name="SignIn" xml:space="preserve">
     <value>Вхід</value>

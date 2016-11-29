@@ -79,6 +79,24 @@ namespace WebApplication3.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Go In Your Account.
+        /// </summary>
+        public static string GoInAccount {
+            get {
+                return ResourceManager.GetString("GoInAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hello, .
+        /// </summary>
+        public static string Hello {
+            get {
+                return ResourceManager.GetString("Hello", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string Home {
@@ -97,6 +115,15 @@ namespace WebApplication3.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to LogOff.
+        /// </summary>
+        public static string LogOff {
+            get {
+                return ResourceManager.GetString("LogOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use your Puppy Care project account.
         /// </summary>
         public static string PCAccount {
@@ -111,6 +138,15 @@ namespace WebApplication3.Resourses {
         public static string PersonalAccount {
             get {
                 return ResourceManager.GetString("PersonalAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registration.
+        /// </summary>
+        public static string Registration {
+            get {
+                return ResourceManager.GetString("Registration", resourceCulture);
             }
         }
         
