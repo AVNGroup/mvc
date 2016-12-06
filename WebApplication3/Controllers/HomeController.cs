@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Text;
 using System.Threading;
 using Microsoft.Azure.Devices;
 using System.Threading.Tasks;
-using IoTHubAmqp;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Table;
-using WebApplication3.Models;
-using Chart;
+using System.IO;
+
 using Microsoft.Azure; // Namespace for CloudConfigurationManager
 using Microsoft.WindowsAzure.Storage.Blob; // Namespace for Blob storage types
-using System.IO;
-using Microsoft.VisualBasic.ApplicationServices;
+using System.Globalization;
+
 namespace WebApplication3.Controllers
 {
     public class HomeController : Controller
@@ -25,7 +20,6 @@ namespace WebApplication3.Controllers
         private const int PORT = 5671;
         private const string SHARED_ACCESS_KEY_NAME = "iothubowner";
         private const string SHARED_ACCESS_KEY = "jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
-        static ServiceClient serviceClient;
         public static string connectionString = "HostName=AVN-group.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
         public static string accountName = "avngroupf";
         public static string accountKey = "sQe3fgEb8Vrn6OWXs1ZvM/zhIlQmwrGLw2RSsO98htfwjiCD0cENbE9xCCBrH+qCi2T29WmNCOVyiu9AncbYNg==";
@@ -35,11 +29,15 @@ namespace WebApplication3.Controllers
         static private readonly long UtcReference = (new DateTime(1970, 1, 1, 0, 0, 0, 0)).Ticks;
 
         // Parse the connection string and return a reference to the storage account
-       // public static CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting(connectionString));
-      //  CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+        // public static CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting(connectionString));
+        //  CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(/*string language*/)
         {
+            //Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+
             return View();
         }
 
