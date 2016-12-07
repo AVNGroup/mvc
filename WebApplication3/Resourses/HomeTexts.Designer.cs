@@ -218,24 +218,6 @@ namespace WebApplication3.Resourses {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No account?.
-        /// </summary>
-        public static string NoAccount {
-            get {
-                return ResourceManager.GetString("NoAccount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Use your Puppy Care project account.
-        /// </summary>
-        public static string PCAccount {
-            get {
-                return ResourceManager.GetString("PCAccount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Personal Account.
         /// </summary>
         public static string PersonalAccount {
@@ -281,16 +263,7 @@ namespace WebApplication3.Resourses {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sign in.
-        /// </summary>
-        public static string SignIn {
-            get {
-                return ResourceManager.GetString("SignIn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Smart Collar module will help you to monitor effectively your dog’s health state. It will control the temperature and measure the pulse of a pet to let you know how your pet feels wherever it is. Due to the GPS using you will also be able to know your pet’s location anytime..
+        ///   Looks up a localized string similar to Smart Collar.
         /// </summary>
         public static string SmartCollar {
             get {
@@ -304,15 +277,6 @@ namespace WebApplication3.Resourses {
         public static string SystemIncludes {
             get {
                 return ResourceManager.GetString("SystemIncludes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Use your Puppy Care project account.
-        /// </summary>
-        public static string UsePersonal {
-            get {
-                return ResourceManager.GetString("UsePersonal", resourceCulture);
             }
         }
     }

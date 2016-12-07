@@ -117,80 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>About</value>
+  <data name="Check" xml:space="preserve">
+    <value>Check</value>
   </data>
-  <data name="Blog" xml:space="preserve">
-    <value>Blog</value>
+  <data name="CheckModuleID" xml:space="preserve">
+    <value>Check Module ID</value>
   </data>
-  <data name="Contact" xml:space="preserve">
-    <value>Contact</value>
+  <data name="CorrectInput" xml:space="preserve">
+    <value>Correct! Module Type</value>
   </data>
-  <data name="CreateOne" xml:space="preserve">
-    <value>Create one</value>
+  <data name="EnterLoginPass" xml:space="preserve">
+    <value>Enter login and password</value>
   </data>
-  <data name="DogFeeder" xml:space="preserve">
-    <value>Dog Feeder is aimed to let you feed your dog easily just by clicking one button in you Puppy Care mobile application.  The application will also advice you, how much food should you give to your pet according to its health parameters. Smart Feeder will also control the constant high water level in a dog’s bowl and refill it if it is a need.</value>
+  <data name="EnterModuleID" xml:space="preserve">
+    <value>Enter your module ID</value>
   </data>
-  <data name="DogNest" xml:space="preserve">
-    <value>Smart Dog Nest will allow a dog owner to control the microclimate in the dog’s sleeping place from the Puppy Care mobile application. You will be able to heat the nest a bit, when it is too cold out or cool it viсe versa.</value>
+  <data name="StepOne" xml:space="preserve">
+    <value>Step 1</value>
   </data>
-  <data name="GoInAccount" xml:space="preserve">
-    <value>Go In Your Account</value>
-  </data>
-  <data name="Hello" xml:space="preserve">
-    <value>Hello, </value>
-  </data>
-  <data name="Home" xml:space="preserve">
-    <value>Home</value>
-  </data>
-  <data name="Language" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="LogOff" xml:space="preserve">
-    <value>LogOff</value>
-  </data>
-  <data name="MicrosoftContacts" xml:space="preserve">
-    <value>IoT laboratory
-Microsoft Ukraine
-Kyiv, Zhilyanska st. 75
-P: 650-555-1212
- F: 650-555-1213</value>
-  </data>
-  <data name="MicrosoftHelp" xml:space="preserve">
-    <value>Puppy Care project was created with the help of Microsoft Ukraine Internet of Things laboratory.</value>
-  </data>
-  <data name="ModulBed" xml:space="preserve">
-    <value>Modul "Bed"</value>
-  </data>
-  <data name="ModulColar" xml:space="preserve">
-    <value>Modul "Colar"</value>
-  </data>
-  <data name="ModuleBadWhatCan" xml:space="preserve">
-    <value>Module 'Bed' includes temperature sensor and able to change temperature via fan</value>
-  </data>
-  <data name="ModuleFeeder" xml:space="preserve">
-    <value>Modul "Feeder"</value>
-  </data>
-  <data name="PersonalAccount" xml:space="preserve">
-    <value>Personal Account</value>
-  </data>
-  <data name="Portfolio" xml:space="preserve">
-    <value>Portfolio</value>
-  </data>
-  <data name="PuppyCareIs" xml:space="preserve">
-    <value>Puppy Care is system that helps you to watch for your pet.</value>
-  </data>
-  <data name="Registration" xml:space="preserve">
-    <value>Registration</value>
-  </data>
-  <data name="Services" xml:space="preserve">
-    <value>Services</value>
-  </data>
-  <data name="SmartCollar" xml:space="preserve">
-    <value>Smart Collar</value>
-  </data>
-  <data name="SystemIncludes" xml:space="preserve">
-    <value>System includes apps on Android, Windows Phone and IOS.</value>
+  <data name="StepTwo" xml:space="preserve">
+    <value>Step 2</value>
   </data>
 </root>

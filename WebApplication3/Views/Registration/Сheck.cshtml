@@ -19,9 +19,9 @@
         {
             <div id="results1">
                 <div style="padding:10px">
-                    <p style="texi-size:1.5em"> Correct! Module Type @ViewData["type"] </p>
-                    <p style="font-size:2em">Step 2</p>
-                    <p style="font-size:1.5em">Enter login and password</p>
+                    <p style="texi-size:1.5em"> @WebApplication3.Resourses.RegistrationText.CorrectInput @ViewData["type"] </p>
+                    <p style="font-size:2em">@WebApplication3.Resourses.RegistrationText.StepTwo</p>
+                    <p style="font-size:1.5em">@WebApplication3.Resourses.RegistrationText.EnterLoginPass</p>
                 </div>
                 <div style="padding-bottom:10px">
                     <input type="text" name="login" placeholder="login" /><br />
@@ -29,7 +29,7 @@
                 <div style="padding-bottom:10px">
                     <input type="text" name="password" placeholder="password" /><br />
                 </div>
-                <input type="submit" value="Check" />
+                <input type="submit" value="@WebApplication3.Resourses.RegistrationText.Check" />
                 </div>
                 }
    

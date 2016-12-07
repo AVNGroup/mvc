@@ -35,8 +35,8 @@
         <div style="text-align:center">
             <img src="~/js_css/images/1fSIBNiqfis.jpg" style="height:170px; width:auto" />
             <div style="padding:10px">
-                <p style="font-size:2.5em">@WebApplication3.Resourses.HomeTexts.SignIn</p>
-                <p style="font-size:1.5em">@WebApplication3.Resourses.HomeTexts.UsePersonal</p>
+                <p style="font-size:2.5em">@WebApplication3.Resourses.LoginText.SignIn</p>
+                <p style="font-size:1.5em">@WebApplication3.Resourses.LoginText.UsePersonal</p>
             </div>
             <form action="/Home/Login" method="post" style="height:inherit">
                 <div style="padding-bottom:10px">
@@ -45,11 +45,11 @@
         <div style="padding-bottom:10px">
             <input id="names" name="Password" type="text" value="password" /><br />
         </div>
-        <input type="submit" value="@WebApplication3.Resourses.HomeTexts.SignIn"/>
+        <input type="submit" value="@WebApplication3.Resourses.LoginText.SignIn"/>
         </form>
         <br />
-            <p style="text-size:1.5em"> @WebApplication3.Resourses.HomeTexts.NoAccount
-        @Html.ActionLink(@WebApplication3.Resourses.HomeTexts.CreateOne, "Index", "Registration")</p>
+            <p style="text-size:1.5em"> @WebApplication3.Resourses.LoginText.NoAccount
+        @Html.ActionLink(@WebApplication3.Resourses.LoginText.CreateOne, "Index", "Registration")</p>
         </div>
 
     </nav>
