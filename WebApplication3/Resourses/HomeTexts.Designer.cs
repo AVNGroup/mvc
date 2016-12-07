@@ -70,11 +70,47 @@ namespace WebApplication3.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Blog.
+        /// </summary>
+        public static string Blog {
+            get {
+                return ResourceManager.GetString("Blog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
         public static string Contact {
             get {
                 return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create one.
+        /// </summary>
+        public static string CreateOne {
+            get {
+                return ResourceManager.GetString("CreateOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dog Feeder is aimed to let you feed your dog easily just by clicking one button in you Puppy Care mobile application.  The application will also advice you, how much food should you give to your pet according to its health parameters. Smart Feeder will also control the constant high water level in a dog’s bowl and refill it if it is a need..
+        /// </summary>
+        public static string DogFeeder {
+            get {
+                return ResourceManager.GetString("DogFeeder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Smart Dog Nest will allow a dog owner to control the microclimate in the dog’s sleeping place from the Puppy Care mobile application. You will be able to heat the nest a bit, when it is too cold out or cool it viсe versa..
+        /// </summary>
+        public static string DogNest {
+            get {
+                return ResourceManager.GetString("DogNest", resourceCulture);
             }
         }
         
@@ -124,6 +160,73 @@ namespace WebApplication3.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IoT laboratory
+        ///Microsoft Ukraine
+        ///Kyiv, Zhilyanska st. 75
+        ///P: 650-555-1212
+        /// F: 650-555-1213.
+        /// </summary>
+        public static string MicrosoftContacts {
+            get {
+                return ResourceManager.GetString("MicrosoftContacts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Puppy Care project was created with the help of Microsoft Ukraine Internet of Things laboratory..
+        /// </summary>
+        public static string MicrosoftHelp {
+            get {
+                return ResourceManager.GetString("MicrosoftHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modul &quot;Bed&quot;.
+        /// </summary>
+        public static string ModulBed {
+            get {
+                return ResourceManager.GetString("ModulBed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modul &quot;Colar&quot;.
+        /// </summary>
+        public static string ModulColar {
+            get {
+                return ResourceManager.GetString("ModulColar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Module &apos;Bed&apos; includes temperature sensor and able to change temperature via fan.
+        /// </summary>
+        public static string ModuleBadWhatCan {
+            get {
+                return ResourceManager.GetString("ModuleBadWhatCan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modul &quot;Feeder&quot;.
+        /// </summary>
+        public static string ModuleFeeder {
+            get {
+                return ResourceManager.GetString("ModuleFeeder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No account?.
+        /// </summary>
+        public static string NoAccount {
+            get {
+                return ResourceManager.GetString("NoAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use your Puppy Care project account.
         /// </summary>
         public static string PCAccount {
@@ -142,6 +245,24 @@ namespace WebApplication3.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Portfolio.
+        /// </summary>
+        public static string Portfolio {
+            get {
+                return ResourceManager.GetString("Portfolio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Puppy Care is system that helps you to watch for your pet..
+        /// </summary>
+        public static string PuppyCareIs {
+            get {
+                return ResourceManager.GetString("PuppyCareIs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Registration.
         /// </summary>
         public static string Registration {
@@ -151,11 +272,47 @@ namespace WebApplication3.Resourses {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Services.
+        /// </summary>
+        public static string Services {
+            get {
+                return ResourceManager.GetString("Services", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sign in.
         /// </summary>
         public static string SignIn {
             get {
                 return ResourceManager.GetString("SignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Smart Collar module will help you to monitor effectively your dog’s health state. It will control the temperature and measure the pulse of a pet to let you know how your pet feels wherever it is. Due to the GPS using you will also be able to know your pet’s location anytime..
+        /// </summary>
+        public static string SmartCollar {
+            get {
+                return ResourceManager.GetString("SmartCollar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System includes apps on Android, Windows Phone and IOS..
+        /// </summary>
+        public static string SystemIncludes {
+            get {
+                return ResourceManager.GetString("SystemIncludes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use your Puppy Care project account.
+        /// </summary>
+        public static string UsePersonal {
+            get {
+                return ResourceManager.GetString("UsePersonal", resourceCulture);
             }
         }
     }

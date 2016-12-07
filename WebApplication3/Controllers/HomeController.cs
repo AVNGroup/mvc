@@ -11,6 +11,7 @@ using System.IO;
 using Microsoft.Azure; // Namespace for CloudConfigurationManager
 using Microsoft.WindowsAzure.Storage.Blob; // Namespace for Blob storage types
 using System.Globalization;
+using System.Web;
 
 namespace WebApplication3.Controllers
 {
@@ -35,21 +36,17 @@ namespace WebApplication3.Controllers
         [HttpGet]
         public ActionResult Index(/*string language*/)
         {
-            //Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(language);
-            //Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
-
             return View();
         }
 
         [HttpGet]
-        public ActionResult Login() {
+        public ActionResult Login()
+        {
             return View();
         }
 
         [HttpPost]
         public async Task<ActionResult> Login(string Login, string Password) {
-
-
             //HttpContext.Response.Cookies["id"].Value = Login;
 
             if (await RegistrationLogin.IsLoginAndPasswordCorrect(tableClient, "IdentityTable", Login, Password))
@@ -64,20 +61,29 @@ namespace WebApplication3.Controllers
             }
         }
 
+        /*public ActionResult Change(String LanguageAbbrevation)
+        {
+            if (LanguageAbbrevation != null)
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(LanguageAbbrevation);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(LanguageAbbrevation);
+            }
 
+            HttpCookie cookie = new HttpCookie("Language");
+            cookie.Value = LanguageAbbrevation;
+            Response.Cookies.Add(cookie);
+
+            return View("Index");
+        }*/
 
         [HttpGet]
         public ActionResult SuccessEnter () {
             return View();
         }
 
-
-
         public ActionResult NotSuccessEnter() {
             return View();
         }
-
-
 
         [HttpPost]
         public ActionResult SuccessEnter(string action) {
