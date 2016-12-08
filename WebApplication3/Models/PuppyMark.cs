@@ -7,9 +7,9 @@ namespace WebApplication3.Models
 {
     public class PuppyMark
     {
-        private int Id { get; set; }
-        private string Name { get; set; }
-        private string GeoLong { get; set; } // for google maps
-        private string GeoLat { get; set; } // for google maps
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string GeoLong { get; set; } // for google maps
+        public string GeoLat { get; set; } // for google maps
     }
 }

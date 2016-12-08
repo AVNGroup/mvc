@@ -42,7 +42,7 @@ namespace WebApplication3.Controllers.Registration
         }
 
         public async Task<ActionResult> AddUsers(string login, string password) {
-            if (await RegistrationLogin.IsLoginCorrect(tableClient, "IdentityTable", login, password)) {
+            if (await RegistrationLogin.IsLoginNew(tableClient, "IdentityTable", login, password)) {
                 ApplicationBase ApplicationVariable = new ApplicationBase();
                 string connectionString = ApplicationVariable.GetEnvironmentVariable("connectionString"); //"HostName=AVN-group.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
       
