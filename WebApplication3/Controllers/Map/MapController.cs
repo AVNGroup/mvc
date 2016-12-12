@@ -37,7 +37,7 @@ namespace WebApplication3.Controllers.Map
         }
         public async Task<JsonResult> GetData()
         {
-            // создадим список данных
+
             string accountName = "avngroupf";
             string accountKey = "sQe3fgEb8Vrn6OWXs1ZvM/zhIlQmwrGLw2RSsO98htfwjiCD0cENbE9xCCBrH+qCi2T29WmNCOVyiu9AncbYNg==";
             StorageCredentials creds = new StorageCredentials(accountName, accountKey);

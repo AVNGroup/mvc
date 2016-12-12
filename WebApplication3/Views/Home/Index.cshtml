@@ -1,8 +1,7 @@
-﻿<!DOCTYPE html>
-<html lang="en-US">
-<head>
-</head>
-<body>
+﻿@{
+    ViewBag.Title = "Index";
+}
+
     <nav id="main-nav" role="navigation">
         <!-- Sample menu definition -->
         <ul id="main-menu" class="sm sm-clean">
@@ -34,42 +33,38 @@
             </li>
             <li><a href="http://www.smartmenus.org/docs/">Docs</a></li>
             <li>
-                @Html.ActionLink("Personal Account", "Login", "Home")
+                @Html.ActionLink(WebApplication3.Resourses.HomeTexts.PersonalAccount, "Login", "Home")
             </li>
-            <li>
-                <a href="#">Language</a>
+            <!--<li>
+                <a href="#">@WebApplication3.Resourses.HomeTexts.Language</a>
                 <ul class="mega-menu">
                     <li>
-                        <!-- The mega drop down contents -->
+                        The mega drop down contents 
                         <div style="width:400px;max-width:100%;">
                             <div style="padding:5px 24px;">
                                 <table>
                                     <tr>
-                                        <td style="width:100px">@Html.Raw(@Html.ActionLink("[Ru]", "Index_ru", "Home").ToHtmlString().Replace("[Ru]", "<img src=\"/js_css/images/Russia.png\" />"))</td>
-                                        <td style="width:100px">@Html.Raw(@Html.ActionLink("[Ru]", "Index_ua", "Home").ToHtmlString().Replace("[Ru]", "<img src=\"/js_css/images/Ukraine.png\" />"))</td>
+                                        <td style="width:100px">@Html.ActionLink(WebApplication3.Resourses.HomeTexts.Language, "Index", "Language")</td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
                     </li>
                 </ul>
-            </li>
+            </li>-->
         </ul>
-       
         <ul class="bxslider">
-            <li style="left:0px;top:-20px"><img src="~/js_css/images/kartink.jpg" title="Puppy Care is system that helps you to watch for your pet." /></li>
-            <li style="left:0px;top:-20px"><img src="~/js_css/images/kartinki.jpg" title="Module 'Bed' includes temperature sensor and able to change temperature via fan" /></li>
-            <li style="left:0px;top:-20px"><img src="~/js_css/images/ofc_outlookrefreshbg_1201_1920x720_en_us.jpg"  title="System includes apps on Android, Windows Phone and IOS." /></li>
+            <li style="left:0px;top:-20px"><img src="~/js_css/images/kartink.jpg" title="@WebApplication3.Resourses.HomeTexts.PuppyCareIs" /></li>
+            <li style="left:0px;top:-20px"><img src="~/js_css/images/kartinki.jpg" title="@WebApplication3.Resourses.HomeTexts.ModuleBadWhatCan" /></li>
+            <li style="left:0px;top:-20px"><img src="~/js_css/images/ofc_outlookrefreshbg_1201_1920x720_en_us.jpg"  title="@WebApplication3.Resourses.HomeTexts.SystemIncludes" /></li>
         </ul>
-
-
         <div style="position:relative;top:50px">
             <section></section>
             <section>
                 <article class="scrollflow -pop -opacity">
 
-                    <h2>Modul "Colar"</h2>
-                    <p>Smart Collar module will help you to monitor effectively your dog’s health state. It will control the temperature and measure the pulse of a pet to let you know how your pet feels wherever it is. Due to the GPS using you will also be able to know your pet’s location anytime.</p><img src="~/js_css/images/colar.png" style="width:70%;height:auto" />
+                    <h2>@WebApplication3.Resourses.HomeTexts.PersonalAccount</h2>
+                    <p>@WebApplication3.Resourses.HomeTexts.SmartCollar</p><img src="~/js_css/images/colar.png" style="width:70%;height:auto" />
 
                 </article>
             </section>
@@ -79,8 +74,8 @@
                     <table width="100%" cellspacing="0" cellpadding="0">
                         <tr>
                             <td width="100%" valign="top">
-                                <h2 class="scrollflow -slide-right -opacity">Modul "Bed"</h2>
-                                <p class="scrollflow -slide-right -opacity">Smart Dog Nest will allow a dog owner to control the microclimate in the dog’s sleeping place from the Puppy Care mobile application. You will be able to heat the nest a bit, when it is too cold out or cool it viсe versa.</p>
+                                <h2 class="scrollflow -slide-right -opacity">@WebApplication3.Resourses.HomeTexts.ModulBed</h2>
+                                <p class="scrollflow -slide-right -opacity">@WebApplication3.Resourses.HomeTexts.DogNest</p>
                             </td>
                         </tr>
                         <tr>
@@ -99,8 +94,8 @@
                     <table width="100%" cellspacing="0" cellpadding="0">
                         <tr>
                             <td width="100%" valign="top">
-                                <h2 class="scrollflow -slide-top -opacity">Modul "Feeder"</h2>
-                                <p class="scrollflow -slide-top -opacity">Dog Feeder is aimed to let you feed your dog easily just by clicking one button in you Puppy Care mobile application.  The application will also advice you, how much food should you give to your pet according to its health parameters. Smart Feeder will also control the constant high water level in a dog’s bowl and refill it if it is a need.</p>
+                                <h2 class="scrollflow -slide-top -opacity">@WebApplication3.Resourses.HomeTexts.ModuleFeeder</h2>
+                                <p class="scrollflow -slide-top -opacity">@WebApplication3.Resourses.HomeTexts.DogFeeder</p>
                             </td>
                         </tr>
                         <tr>
@@ -116,23 +111,19 @@
             <section>
                 <div class="scrollflow -slide-top" data-scrollflow-start="0" data-scrollflow-distance="100" data-scrollflow-amount="200">&nbsp;</div>
                 <article>
-                    <h2 class="scrollflow -slide-bottom -opacity" data-scrollflow-start="0" data-scrollflow-distance="100" data-scrollflow-amount="200">Puppy Care project was created<br />with the help of<br />Microsoft Ukraine Internet of Things laboratory.</h2>
+                    <h2 class="scrollflow -slide-bottom -opacity" data-scrollflow-start="0" data-scrollflow-distance="100" data-scrollflow-amount="200">@WebApplication3.Resourses.HomeTexts.MicrosoftHelp</h2>
                 </article>
-            </section>
-
-            <section>
-                <article>
             </section>
         </div>
         <footer>
             <div id="container">
                 <div class="footerLeft">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">@WebApplication3.Resourses.HomeTexts.Home</a></li>
+                        <li><a href="#">@WebApplication3.Resourses.HomeTexts.Portfolio</a></li>
+                        <li><a href="#">@WebApplication3.Resourses.HomeTexts.Services</a></li>
+                        <li><a href="#">@WebApplication3.Resourses.HomeTexts.About</a></li>
+                        <li><a href="#">@WebApplication3.Resourses.HomeTexts.Blog</a></li>
                         <li class="last"><a href="#">Contact</a></li>
                     </ul>
                     <div class="icons">
@@ -144,15 +135,9 @@
 
                 <div class="contact">
                     <p>
-                        IoT laboratory<br>
-                        Microsoft Ukraine<br>
-                        Kyiv, Zhilyanska st. 75<br>
-                        P: 650-555-1212<br>
-                        F: 650-555-1213
+                        @WebApplication3.Resourses.HomeTexts.MicrosoftContacts
                     </p>
                 </div><!--end div "contact"-->
             </div><!--end div "container"-->
         </footer>
     </nav>
-</body>
-</html>
