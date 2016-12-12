@@ -25,6 +25,7 @@ namespace WebApplication3.Controllers.Admin
         public static CloudStorageAccount storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=avngroupf;AccountKey=sQe3fgEb8Vrn6OWXs1ZvM/zhIlQmwrGLw2RSsO98htfwjiCD0cENbE9xCCBrH+qCi2T29WmNCOVyiu9AncbYNg==");
         public static CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
         public  ActionResult Index()
+
         {
             ViewData["ListRoute"] = Route.GetRoute(tableClient, "Bob", "Шарик");
             return View();
