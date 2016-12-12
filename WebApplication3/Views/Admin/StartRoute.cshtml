@@ -1,0 +1,6 @@
+﻿@using (Ajax.BeginForm("AddRoute", "Admin", new AjaxOptions { UpdateTargetId = "results1" }))
+{
+    <h1>Введіть назву маршруту</h1>
+    <input type="text" name="NameRoute" />
+    <input type="submit" value="@ViewData["Rand"]" />
+}

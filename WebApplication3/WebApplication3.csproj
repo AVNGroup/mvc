@@ -407,6 +407,7 @@
     <Compile Include="Models\Devices.cs" />
     <Compile Include="Models\PersoneLoginInformation.cs" />
     <Compile Include="Models\PuppyMark.cs" />
+    <Compile Include="Models\Route.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration.cs" />
     <Compile Include="SHA.cs" />
@@ -548,7 +549,9 @@
     <None Include="Properties\PublishProfiles\puppycare - Web Deploy %288%29.pubxml" />
     <None Include="Properties\PublishProfiles\puppycare - Web Deploy %289%29.pubxml" />
     <None Include="Properties\PublishProfiles\PuppyCare - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\puppycare-andriy - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\puppycare-andriy - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\puppycare-andriy - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\puppycare-andriy - Web Deploy.pubxml" />
     <Content Include="Scripts\gmaps.js" />
     <Content Include="Scripts\gmaps.min.js" />
@@ -666,6 +669,9 @@
     <Content Include="Views\Collar\Collar.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Views\Admin\StartRoute.cshtml" />
+    <Content Include="Views\Admin\AddRoute.cshtml" />
+    <Content Include="Views\Admin\SelectRoute.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

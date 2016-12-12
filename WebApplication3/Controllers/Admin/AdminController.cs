@@ -12,46 +12,44 @@ using System.Text;
 using WebApplication3.Models;
 using System.Web.Caching;
 using System.Web.UI;
-
+using Microsoft.Azure;
+using WebApplication3.Controllers;
+// Далее ваши библиотеки
+using Newtonsoft.Json;
 namespace WebApplication3.Controllers.Admin
 {
     public class AdminController : Controller
     {
-        
-        private const string HOST = "AVN-group.azure-devices.net";
-        private const int PORT = 5671;
-        private const string SHARED_ACCESS_KEY_NAME = "iothubowner";
-        private const string SHARED_ACCESS_KEY = "jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
-        static ServiceClient serviceClient;
-        static string connectionString = "HostName=AVN-group.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
-        public static string accountName = "avngroupf";
-        public static string accountKey = "sQe3fgEb8Vrn6OWXs1ZvM/zhIlQmwrGLw2RSsO98htfwjiCD0cENbE9xCCBrH+qCi2T29WmNCOVyiu9AncbYNg==";
-        public static StorageCredentials creds = new StorageCredentials(accountName, accountKey);
-        public static CloudStorageAccount account = new CloudStorageAccount(creds, useHttps: true);
-        CloudTableClient tableClient = account.CreateCloudTableClient();
-        bool red = true;
-        static private readonly long UtcReference = (new DateTime(1970, 1, 1, 0, 0, 0, 0)).Ticks;
-        // GET: Admin
-        public ActionResult Index()
+
+
+        public static CloudStorageAccount storageAccount = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=avngroupf;AccountKey=sQe3fgEb8Vrn6OWXs1ZvM/zhIlQmwrGLw2RSsO98htfwjiCD0cENbE9xCCBrH+qCi2T29WmNCOVyiu9AncbYNg==");
+        public static CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
+        public  ActionResult Index()
         {
-            //ViewData["type"] = HttpContext.Request.Cookies["id"].Value;
+            ViewData["ListRoute"] = Route.GetRoute(tableClient, "Bob", "Шарик");
             return View();
         }
-        static int x = 9;
-
         //[OutputCache(Duration = 30, Location = OutputCacheLocation.Downstream)]
-        public  ActionResult Сheck(string ID)
+        public ActionResult StartRoute()
         {
-            //CloudTable table = tableClient.GetTableReference("Route");
-
-            //Route route1 = new Route();
-
-            //TableOperation insert = TableOperation.Insert(route1);
-            //table.Execute(insert);
-            x++;
-            ViewData["type"] = x.ToString();             
+            ViewData["Rand"] = "Тест";
             return View();
-
+        }
+        public ActionResult AddRoute()
+        {
+            return View();
+        }
+        public ActionResult SelectRoute(string name)
+        {
+            List<List<string>> ListLanAndLot = Route.GetLanAndLonList(tableClient ,name);
+            List<string> listresult = new List<string>();
+            for(int i =0; i < ListLanAndLot[0].Count; i++)
+            {
+                listresult.Add(ListLanAndLot[0][i]);
+                listresult.Add(ListLanAndLot[1][i]);
+            }
+            ViewData["SelectRoute"] = JsonConvert.SerializeObject(listresult);
+            return View();
         }
     }
 }
