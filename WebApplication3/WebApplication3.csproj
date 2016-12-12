@@ -365,6 +365,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\Registration\SecurePasswordHasher.cs" />
     <Compile Include="Libraries_created\Table_dataSource.cs" />
     <Compile Include="Controllers\AzureController.cs" />
     <Compile Include="Controllers\Chart\ChartController.cs" />
@@ -658,6 +659,7 @@
     <EmbeddedResource Include="Resourses\HomeTexts.ua.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>HomeTexts.ua.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resourses\HomeTexts.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -666,6 +668,7 @@
     <EmbeddedResource Include="Resourses\LoginText.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>LoginText.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resourses\RegistrationText.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

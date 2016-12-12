@@ -13,8 +13,8 @@ namespace WebApplication3.Models
         private String password { get; set; }
 
         public PersoneLoginInformation() {
-            this.login = "0";
-            this.password = "0";
+            this.login = "";
+            this.password = "";
         }
 
 

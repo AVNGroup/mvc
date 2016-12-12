@@ -2,6 +2,7 @@
 using Microsoft.WindowsAzure.Storage.Table;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
+using WebApplication3.Controllers.Registration;
 
 public class RegistrationLogin {
     // private const string HOST = "AVN-group.azure-devices.net";
@@ -27,8 +28,11 @@ public class RegistrationLogin {
     }
     static public async Task Registration(CloudTableClient tableClient, string id, string pasword) {
         CloudTable table = tableClient.GetTableReference(registrationTableName);
+
         TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>().Where(TableQuery.GenerateFilterCondition("ID", QueryComparisons.Equal, id));
+
         TableQuerySegment<CustomerEntity> list = await table.ExecuteQuerySegmentedAsync(query, null);
+
         if (list.Results.Count == 0) {
             check = false;
         } else {
@@ -41,38 +45,46 @@ public class RegistrationLogin {
                 check = true;
         }
     }
-    static public async Task<bool> IsLoginAndPasswordCorrect(CloudTableClient tableClient,string tablename, string id, string pasword) {
+    static public async Task<bool> IsLoginAndPasswordCorrect(CloudTableClient tableClient,string tablename, string id, string password) {
         CloudTable table = tableClient.GetTableReference(tablename);
-        TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>().Where(TableQuery.GenerateFilterCondition("ID", QueryComparisons.Equal, id));
-        TableQuerySegment<CustomerEntity> list = await table.ExecuteQuerySegmentedAsync(query, null);
-        if (list.Results.Count == 0) {
-            check = false;
-        }
-        else {
-            if (list.Results[0].Password != pasword){
-                check = false;
-            } else {
-                check = true;
-            }
-        }
-        return check;
-    }
-    static public async Task<bool> IsLoginAndPasswordCorrect(string id, string pasword) {
-        CloudStorageAccount account = new CloudStorageAccount(creds, useHttps: true);
-        CloudTableClient tableClient = account.CreateCloudTableClient();
-        CloudTable table = tableClient.GetTableReference(registrationTableName);
 
         TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>().Where(TableQuery.GenerateFilterCondition("ID", QueryComparisons.Equal, id));
+
         TableQuerySegment<CustomerEntity> list = await table.ExecuteQuerySegmentedAsync(query, null);
-        if (list.Results.Count == 0)
-        {
+
+        if (list.Results.Count == 0) {
             return false;
         }
         else {
-            if (list.Results[0].Password != pasword)
-                return false;
-            else
-                return true;
+            for (int i = 0; i < list.Results.Count; i++) {
+                if (SecurePasswordHasher.Verify(password, list.Results[i].Password)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+    static public async Task<bool> IsLoginAndPasswordCorrect(string login, string password) {
+        CloudStorageAccount account = new CloudStorageAccount(creds, useHttps: true);
+
+        CloudTableClient tableClient = account.CreateCloudTableClient();
+
+        CloudTable table = tableClient.GetTableReference(registrationTableName);
+
+        TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, login));
+
+        TableQuerySegment<CustomerEntity> list = await table.ExecuteQuerySegmentedAsync(query, null);
+
+        if (list.Results.Count == 0) {
+            return false;
+        }
+        else {
+            for (int i = 0; i < list.Results.Count; i++) {
+                if (SecurePasswordHasher.Verify(password, list.Results[i].Password)) {
+                    return true;
+                }
+            }
+            return false;
         }
 
     }
@@ -89,10 +101,10 @@ public class RegistrationLogin {
             return true;
 
         }
-    static public async Task<bool> IsLoginNew(CloudTableClient tableClient, string tablename, string login, string pasword) {
+    static public async Task<bool> IsLoginNew(CloudTableClient tableClient, string tablename, string login, string hashedPassword) {
         CloudTable table = tableClient.GetTableReference(tablename);
 
-        TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>().Where(TableQuery.GenerateFilterCondition("ID", QueryComparisons.Equal, login));
+        TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, login));
 
         TableQuerySegment<CustomerEntity> list = await table.ExecuteQuerySegmentedAsync(query, null);
 
