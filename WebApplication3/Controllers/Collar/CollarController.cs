@@ -49,9 +49,23 @@ namespace WebApplication3.Controllers.Collar
             ViewData["Rand"] = s;
             return View();
         }
-        public ViewResult Collar()
+        public async Task<ActionResult> Collar()
         {
-            return View();
+            try
+            {
+                if (await RegistrationLogin.IsLoginAndPasswordCorrect(HttpContext.Request.Cookies["Login"].Value, HttpContext.Request.Cookies["Password"].Value))
+                {
+                    return View();
+                }
+                else
+                {
+                    return Redirect("/Home/Login");
+                }
+            }
+            catch (System.NullReferenceException)
+            {
+                return Redirect("/Home/Login");
+            }
         }
     }
 }
