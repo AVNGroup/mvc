@@ -60,6 +60,5 @@ namespace WebApplication3.Controllers.Registration
                 return Redirect("/Home/NotSuccessEnter");
             }
         }
-        
     }
 }

@@ -40,7 +40,7 @@ namespace WebApplication3.Controllers.Collar
             Random rand = new Random();
             ViewData["Temp"] = d.valuetemp;
             ViewData["Coord"] = d.lat + "/" + d.lon;
-            ViewData["Rand"] = rand;
+            ViewData["Rand"] =  rand.Next();
             return View();
         }
         public async Task<ActionResult> Collar()

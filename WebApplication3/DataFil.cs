@@ -41,16 +41,10 @@ namespace WebApplication3.Controllers
            
             TableQuerySegment<DataTable> list = await table.ExecuteQuerySegmentedAsync(query, null);
             int max = 0;
-            DateTimeOffset sa = new DateTimeOffset();
-            for(int i = 0; i < list.Results.Count; i++)
-            {
-                if(Convert.ToDateTime(list.Results[i].valuedatetime) > sa)
-                {
-                    max = i;
-                    sa = Convert.ToDateTime(list.Results[i].valuedatetime);
-                }
-            }
-            return list.Results[max];
+            DateTime sa = new DateTime(1,1,1);
+            List<DataTable> lis = table.ExecuteQuery(query).ToList();
+            lis.Sort(delegate (DataTable dat1, DataTable dat2) { return dat2.valuedatetime.CompareTo(dat1.valuedatetime); });//сортуємо список даних по даті виміру
+            return lis[0];
         }
         public static async Task<List<DataTable>> InfaCount(string typeData, int count)
         {

@@ -5,15 +5,22 @@ using System.Web;
 using System.Web.Mvc;
 using WebApplication3.Models;
 // Далее ваши библиотеки
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using WebApplication3.ConnectedAzure;
 namespace WebApplication3.Controllers.Admin
 {
     public class AdminController : Controller
     {
-        public  ActionResult Index()
+        public async Task<ActionResult> Index()
 
         {
+            
+            DataTable d = await DataFil.lasttemp("Distance");
+            Random rand = new Random();
+            ViewData["Temp"] = d.valuetemp;
+            ViewData["Coord"] = d.lat + "/" + d.lon;
+            ViewData["Rand"] = rand;
             ViewData["ListRoute"] = Route.GetRoute(ConnectedAzureServises.tableClient, "Bob", "Шарик");
             return View();
         }
