@@ -43,10 +43,7 @@ namespace WebApplication3.Controllers.Registration
             string hashedPassword = SecurePasswordHasher.Hash(password);
 
             if (await RegistrationLogin.IsLoginNew(CLIENT_TABLE_NAME, login, hashedPassword)) {
-                ApplicationBase ApplicationVariable = new ApplicationBase();
-                string connectionString = ApplicationVariable.GetEnvironmentVariable("connectionString"); //"HostName=AVN-group.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
-      
-                ServiceClient serviceClient = ServiceClient.CreateFromConnectionString(connectionString);
+
                 CloudTable table = ConnectedAzureServises.tableClient.GetTableReference(CLIENT_TABLE_NAME);
 
                 CustomerEntity customer = new CustomerEntity(login, hashedPassword);
