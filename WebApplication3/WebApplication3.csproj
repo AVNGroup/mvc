@@ -552,6 +552,8 @@
     <Content Include="Scripts\gmaps.map_types.js" />
     <Content Include="Scripts\gmaps.markers.js" />
     <Content Include="Scripts\gmaps.min.js.map" />
+    <None Include="Properties\PublishProfiles\puppycare - FTP %2810%29.pubxml" />
+    <None Include="Properties\PublishProfiles\puppycare - FTP %2811%29.pubxml" />
     <None Include="Properties\PublishProfiles\PuppyCare - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\PuppyCare - FTP %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\puppycare - FTP %284%29.pubxml" />
@@ -564,6 +566,8 @@
     <None Include="Properties\PublishProfiles\puppycare - Web Deploy %2810%29.pubxml" />
     <None Include="Properties\PublishProfiles\puppycare - Web Deploy %2811%29.pubxml" />
     <None Include="Properties\PublishProfiles\puppycare - Web Deploy %2812%29.pubxml" />
+    <None Include="Properties\PublishProfiles\puppycare - Web Deploy %2813%29.pubxml" />
+    <None Include="Properties\PublishProfiles\puppycare - Web Deploy %2814%29.pubxml" />
     <None Include="Properties\PublishProfiles\PuppyCare - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\PuppyCare - Web Deploy %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\PuppyCare - Web Deploy %284%29.pubxml" />

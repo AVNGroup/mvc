@@ -21,7 +21,7 @@ namespace WebApplication3.Controllers.Registration
             return View();
         }
         public async Task<ActionResult> Сheck(string ID) {
-            if (await RegistrationLogin.IsIDDeviceCorrect(ConnectedAzureServises.tableClient, "Modules", ID)) {
+            if (await RegistrationLogin.IsIDDeviceCorrect("Modules", ID)) {
                 CloudTable table = ConnectedAzureServises.tableClient.GetTableReference("Modules");
                 TableQuery<Devices> query = new TableQuery<Devices>().Where(TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.Equal, ID));
 
@@ -42,7 +42,7 @@ namespace WebApplication3.Controllers.Registration
             //Hash
             string hashedPassword = SecurePasswordHasher.Hash(password);
 
-            if (await RegistrationLogin.IsLoginNew(ConnectedAzureServises.tableClient, CLIENT_TABLE_NAME, login, hashedPassword)) {
+            if (await RegistrationLogin.IsLoginNew(CLIENT_TABLE_NAME, login, hashedPassword)) {
                 ApplicationBase ApplicationVariable = new ApplicationBase();
                 string connectionString = ApplicationVariable.GetEnvironmentVariable("connectionString"); //"HostName=AVN-group.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
       
