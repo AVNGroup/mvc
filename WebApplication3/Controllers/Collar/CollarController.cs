@@ -8,7 +8,7 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Table;
 using Microsoft.VisualBasic.ApplicationServices;
-
+using WebApplication3.ConnectedAzure;
 namespace WebApplication3.Controllers.Collar
    
 {
@@ -35,18 +35,12 @@ namespace WebApplication3.Controllers.Collar
         }
         public async Task<ActionResult> Data()
         {
-            ApplicationBase ApplicationVariable = new ApplicationBase();
-            string s = ApplicationVariable.GetEnvironmentVariable("TEST");
-            string accountName = "avngroupf";
-            string accountKey = "sQe3fgEb8Vrn6OWXs1ZvM/zhIlQmwrGLw2RSsO98htfwjiCD0cENbE9xCCBrH+qCi2T29WmNCOVyiu9AncbYNg==";
-            StorageCredentials creds = new StorageCredentials(accountName, accountKey);
-            CloudStorageAccount account = new CloudStorageAccount(creds, useHttps: true);
-            CloudTableClient tableClient = account.CreateCloudTableClient();
-            DataTable d = await DataFil.lasttemp(tableClient, "Distance");
+          
+            DataTable d = await DataFil.lasttemp("Distance");
             Random rand = new Random();
             ViewData["Temp"] = d.valuetemp;
             ViewData["Coord"] = d.lat + "/" + d.lon;
-            ViewData["Rand"] = s;
+            ViewData["Rand"] = rand;
             return View();
         }
         public async Task<ActionResult> Collar()

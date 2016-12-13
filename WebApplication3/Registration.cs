@@ -3,6 +3,7 @@ using Microsoft.WindowsAzure.Storage.Table;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using WebApplication3.Controllers.Registration;
+using WebApplication3.ConnectedAzure;
 
 public class RegistrationLogin {
     // private const string HOST = "AVN-group.azure-devices.net";
@@ -10,10 +11,6 @@ public class RegistrationLogin {
     // private const string SHARED_ACCESS_KEY_NAME = "iothubowner";
     // private const string SHARED_ACCESS_KEY = "jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
     // private static string connectionString = "HostName=AVN-group.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
-
-    private static string accountName = "avngroupf";
-    private static string accountKey = "sQe3fgEb8Vrn6OWXs1ZvM/zhIlQmwrGLw2RSsO98htfwjiCD0cENbE9xCCBrH+qCi2T29WmNCOVyiu9AncbYNg==";
-    private static StorageCredentials creds = new StorageCredentials(accountName, accountKey);
 
     private static string registrationTableName = "IdentityTable";
 
@@ -65,11 +62,8 @@ public class RegistrationLogin {
         }
     }
     static public async Task<bool> IsLoginAndPasswordCorrect(string login, string password) {
-        CloudStorageAccount account = new CloudStorageAccount(creds, useHttps: true);
 
-        CloudTableClient tableClient = account.CreateCloudTableClient();
-
-        CloudTable table = tableClient.GetTableReference(registrationTableName);
+        CloudTable table = ConnectedAzureServises.tableClient.GetTableReference(registrationTableName);
 
         TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, login));
 
@@ -88,8 +82,8 @@ public class RegistrationLogin {
         }
 
     }
-    static public async Task<bool> IsIDDeviceCorrect(CloudTableClient tableClient, string tablename, string id) {
-        CloudTable table = tableClient.GetTableReference(tablename);
+    static public async Task<bool> IsIDDeviceCorrect(string tablename, string id) {
+        CloudTable table = ConnectedAzureServises.tableClient.GetTableReference(tablename);
 
         TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>().Where(TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.Equal, id));
 
@@ -101,8 +95,8 @@ public class RegistrationLogin {
             return true;
 
         }
-    static public async Task<bool> IsLoginNew(CloudTableClient tableClient, string tablename, string login, string hashedPassword) {
-        CloudTable table = tableClient.GetTableReference(tablename);
+    static public async Task<bool> IsLoginNew(string tablename, string login, string hashedPassword) {
+        CloudTable table = ConnectedAzureServises.tableClient.GetTableReference(tablename);
 
         TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, login));
 

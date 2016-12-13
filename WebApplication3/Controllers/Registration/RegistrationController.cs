@@ -7,17 +7,12 @@ using Microsoft.WindowsAzure.Storage.Table;
 using WebApplication3.Models;
 using WebApplication3.Libraries_created;
 using Microsoft.VisualBasic.ApplicationServices;
+using WebApplication3.ConnectedAzure;
 
 namespace WebApplication3.Controllers.Registration
 {
     public class RegistrationController : Controller
     {
-        private static string accountName = "avngroupf";
-        private static string accountKey = "sQe3fgEb8Vrn6OWXs1ZvM/zhIlQmwrGLw2RSsO98htfwjiCD0cENbE9xCCBrH+qCi2T29WmNCOVyiu9AncbYNg==";
-        private static StorageCredentials creds = new StorageCredentials(accountName, accountKey);
-        private static CloudStorageAccount account = new CloudStorageAccount(creds, useHttps: true);
-        private CloudTableClient tableClient = account.CreateCloudTableClient();
-
         private string CLIENT_TABLE_NAME = "IdentityTable";
 
         // GET: Registration
@@ -26,8 +21,8 @@ namespace WebApplication3.Controllers.Registration
             return View();
         }
         public async Task<ActionResult> Сheck(string ID) {
-            if (await RegistrationLogin.IsIDDeviceCorrect(tableClient, "Modules", ID)) {
-                CloudTable table = tableClient.GetTableReference("Modules");
+            if (await RegistrationLogin.IsIDDeviceCorrect(ConnectedAzureServises.tableClient, "Modules", ID)) {
+                CloudTable table = ConnectedAzureServises.tableClient.GetTableReference("Modules");
                 TableQuery<Devices> query = new TableQuery<Devices>().Where(TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.Equal, ID));
 
                 TableQuerySegment<Devices> list = await table.ExecuteQuerySegmentedAsync(query, null);
@@ -47,12 +42,12 @@ namespace WebApplication3.Controllers.Registration
             //Hash
             string hashedPassword = SecurePasswordHasher.Hash(password);
 
-            if (await RegistrationLogin.IsLoginNew(tableClient, CLIENT_TABLE_NAME, login, hashedPassword)) {
+            if (await RegistrationLogin.IsLoginNew(ConnectedAzureServises.tableClient, CLIENT_TABLE_NAME, login, hashedPassword)) {
                 ApplicationBase ApplicationVariable = new ApplicationBase();
                 string connectionString = ApplicationVariable.GetEnvironmentVariable("connectionString"); //"HostName=AVN-group.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
       
                 ServiceClient serviceClient = ServiceClient.CreateFromConnectionString(connectionString);
-                CloudTable table = tableClient.GetTableReference(CLIENT_TABLE_NAME);
+                CloudTable table = ConnectedAzureServises.tableClient.GetTableReference(CLIENT_TABLE_NAME);
 
                 CustomerEntity customer = new CustomerEntity(login, hashedPassword);
                 customer.ID = login;

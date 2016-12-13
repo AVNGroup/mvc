@@ -18,18 +18,7 @@ namespace WebApplication3.Controllers
 {
     public class TempController : Controller
     {
-        private const string HOST = "AVN-group.azure-devices.net";
-        private const int PORT = 5671;
-        private const string SHARED_ACCESS_KEY_NAME = "iothubowner";
-        private const string SHARED_ACCESS_KEY = "jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
-        static ServiceClient serviceClient;
-        static string connectionString = "HostName=AVN-group.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
-        public static string accountName = "avngroupf";
-        public static string accountKey = "sQe3fgEb8Vrn6OWXs1ZvM/zhIlQmwrGLw2RSsO98htfwjiCD0cENbE9xCCBrH+qCi2T29WmNCOVyiu9AncbYNg==";
-        public static StorageCredentials creds = new StorageCredentials(accountName, accountKey);
-        public static CloudStorageAccount account = new CloudStorageAccount(creds, useHttps: true);
-        CloudTableClient tableClient = account.CreateCloudTableClient();
-        bool red = true;
+
         public static double temp = 25.5;
         static private readonly long UtcReference = (new DateTime(1970, 1, 1, 0, 0, 0, 0)).Ticks;
         // GET: Temp
@@ -56,7 +45,6 @@ namespace WebApplication3.Controllers
             var msg = new Microsoft.Azure.Devices.Client.Message(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(d)));
             await deviceClient.SendEventAsync(msg);
             return Redirect("/Temp/Index");
-            string s = DateTime.Now.ToString();
         }
 
 

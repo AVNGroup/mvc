@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Microsoft.WindowsAzure.Storage.Table;
 using WebApplication3.Controllers;
+using WebApplication3.ConnectedAzure;
 namespace WebApplication3.Models
 {
     public class Route : TableEntity
@@ -42,16 +43,16 @@ namespace WebApplication3.Models
             return ListRoute;
         }
 
-        public static List<List<string>> GetLanAndLonList(CloudTableClient tableClient,string nameroute)
+        public static List<List<string>> GetLanAndLonList(string nameroute)
         {
             List<List<string>> ListLatAndLon = new List<List<string>>();
-            CloudTable table = tableClient.GetTableReference("Route");
+            CloudTable table = ConnectedAzureServises.tableClient.GetTableReference("Route");
             TableQuery<Route> query = new TableQuery<Route>().Where(TableQuery.GenerateFilterCondition("NameRoute", QueryComparisons.Equal, nameroute));
             foreach (Route route in table.ExecuteQuery(query))
             {
                 List<string> ListLat = new List<string>();
                 List<string> ListLon = new List<string>();
-                CloudTable table2 = tableClient.GetTableReference("DataStreamFromHub");
+                CloudTable table2 = ConnectedAzureServises.tableClient.GetTableReference("DataStreamFromHub");
                 TableQuery<DataTable> query2 = new TableQuery<DataTable>().Where(TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.Equal, "Tom"));
                 List<DataTable> lis = table2.ExecuteQuery(query2).ToList();
                 lis.Sort(delegate (DataTable dat1, DataTable dat2) { return dat1.valuedatetime.CompareTo(dat2.valuedatetime); });//сортуємо список даних по даті виміру

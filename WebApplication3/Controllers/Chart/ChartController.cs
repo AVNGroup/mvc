@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Table;
+using WebApplication3.ConnectedAzure;
 
 namespace WebApplication3.Controllers.Chart
 {
@@ -37,12 +38,7 @@ namespace WebApplication3.Controllers.Chart
         public async Task<ActionResult> PaintChar(string count)
         {
 
-            string accountName = "avngroupf";
-            string accountKey = "sQe3fgEb8Vrn6OWXs1ZvM/zhIlQmwrGLw2RSsO98htfwjiCD0cENbE9xCCBrH+qCi2T29WmNCOVyiu9AncbYNg==";
-            StorageCredentials creds = new StorageCredentials(accountName, accountKey);
-            CloudStorageAccount account = new CloudStorageAccount(creds, useHttps: true);
-            CloudTableClient tableClient = account.CreateCloudTableClient();
-            List<DataTable> infa = await DataFil.InfaCount(tableClient, "asd",Convert.ToInt32(count));
+            List<DataTable> infa = await DataFil.InfaCount("asd",Convert.ToInt32(count));
             string[] test2 = new string[Convert.ToInt32(count)];
             string[] test = new string[Convert.ToInt32(count)];
             for (int i = 0; i < Convert.ToInt32(count); i++)

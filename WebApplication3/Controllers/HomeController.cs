@@ -7,28 +7,18 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Table;
 using System.IO;
+using WebApplication3.ConnectedAzure;
 
 using Microsoft.Azure; // Namespace for CloudConfigurationManager
 using Microsoft.WindowsAzure.Storage.Blob; // Namespace for Blob storage types
 using System.Globalization;
 using System.Web;
 
+
 namespace WebApplication3.Controllers
 {
     public class HomeController : Controller
     {
-        private const string HOST = "AVN-group.azure-devices.net";
-        private const int PORT = 5671;
-        private const string SHARED_ACCESS_KEY_NAME = "iothubowner";
-        private const string SHARED_ACCESS_KEY = "jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
-        public static string connectionString = "HostName=AVN-group.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
-        public static string accountName = "avngroupf";
-        public static string accountKey = "sQe3fgEb8Vrn6OWXs1ZvM/zhIlQmwrGLw2RSsO98htfwjiCD0cENbE9xCCBrH+qCi2T29WmNCOVyiu9AncbYNg==";
-        public static StorageCredentials creds = new StorageCredentials(accountName, accountKey);
-        public static CloudStorageAccount account = new CloudStorageAccount(creds, useHttps: true);
-        CloudTableClient tableClient = account.CreateCloudTableClient();
-        static private readonly long UtcReference = (new DateTime(1970, 1, 1, 0, 0, 0, 0)).Ticks;
-
         // Parse the connection string and return a reference to the storage account
         // public static CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting(connectionString));
         //  CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
@@ -49,7 +39,7 @@ namespace WebApplication3.Controllers
         public async Task<ActionResult> Login(string Login, string Password) {
             //HttpContext.Response.Cookies["id"].Value = Login;
 
-            if (await RegistrationLogin.IsLoginAndPasswordCorrect(tableClient, "IdentityTable", Login, Password))
+            if (await RegistrationLogin.IsLoginAndPasswordCorrect(ConnectedAzureServises.tableClient, "IdentityTable", Login, Password))
             {
                 HttpContext.Response.Cookies["Login"].Value = Login;
                 HttpContext.Response.Cookies["Password"].Value = Password;
@@ -120,11 +110,9 @@ namespace WebApplication3.Controllers
         {
 
             // Retrieve storage account from connection string.
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-                CloudConfigurationManager.GetSetting(connectionString));
 
             // Create the blob client.
-            CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+            CloudBlobClient blobClient = ConnectedAzureServises.storageAccount.CreateCloudBlobClient();
 
             // Retrieve reference to a previously created container.
             CloudBlobContainer container = blobClient.GetContainerReference("mycontainer");

@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Table;
+using WebApplication3.ConnectedAzure;
+
 namespace WebApplication3.Controllers
 {
     class DataFil
     {
         
-        static public async Task<bool> IsDataNormal(CloudTableClient tableClient, string typeData)
+        static public async Task<bool> IsDataNormal(string typeData)
         {
-            CloudTable table = tableClient.GetTableReference("DataStreamFromIOThub");
+            CloudTable table = ConnectedAzureServises.tableClient.GetTableReference("DataStreamFromIOThub");
             TableQuery<DataTable> query = new TableQuery<DataTable>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, typeData));
             TableQuerySegment<DataTable> list = await table.ExecuteQuerySegmentedAsync(query, null);
             if (list.Results.Count == 0)
@@ -32,9 +34,9 @@ namespace WebApplication3.Controllers
             }
             return true;
         }
-         public static async Task<DataTable> lasttemp(CloudTableClient tableClient, string typeData)
+         public static async Task<DataTable> lasttemp(string typeData)
         {
-            CloudTable table = tableClient.GetTableReference("DataStreamFromHub");
+            CloudTable table = ConnectedAzureServises.tableClient.GetTableReference("DataStreamFromHub");
             TableQuery<DataTable> query = new TableQuery<DataTable>().Where(TableQuery.GenerateFilterCondition("valueid", QueryComparisons.Equal, "RaspberryData"));
            
             TableQuerySegment<DataTable> list = await table.ExecuteQuerySegmentedAsync(query, null);
@@ -50,9 +52,9 @@ namespace WebApplication3.Controllers
             }
             return list.Results[max];
         }
-        public static async Task<List<DataTable>> InfaCount(CloudTableClient tableClient, string typeData, int count)
+        public static async Task<List<DataTable>> InfaCount(string typeData, int count)
         {
-            CloudTable table = tableClient.GetTableReference("DataStreamFromHub");
+            CloudTable table = ConnectedAzureServises.tableClient.GetTableReference("DataStreamFromHub");
             TableQuery<DataTable> query = new TableQuery<DataTable>().Where(TableQuery.GenerateFilterCondition("valueid", QueryComparisons.Equal, "RaspberryData"));
 
             TableQuerySegment<DataTable> list = await table.ExecuteQuerySegmentedAsync(query, null);

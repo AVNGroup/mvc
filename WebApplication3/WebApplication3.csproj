@@ -381,12 +381,12 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="ConnectedAzureServises.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\Registration\SecurePasswordHasher.cs" />
     <Compile Include="Libraries_created\Table_dataSource.cs" />
-    <Compile Include="Controllers\AzureController.cs" />
     <Compile Include="Controllers\Chart\ChartController.cs" />
     <Compile Include="Controllers\Collar\CollarController.cs" />
     <Compile Include="Controllers\Feeder\FeederController.cs" />
@@ -573,11 +573,9 @@
     <None Include="Properties\PublishProfiles\puppycare - Web Deploy %288%29.pubxml" />
     <None Include="Properties\PublishProfiles\puppycare - Web Deploy %289%29.pubxml" />
     <None Include="Properties\PublishProfiles\PuppyCare - Web Deploy.pubxml" />
-
     <None Include="Properties\PublishProfiles\puppycare-ivan - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\puppycare-ivan - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
-
     <Content Include="Scripts\gmaps.js" />
     <Content Include="Scripts\gmaps.min.js" />
     <Content Include="Scripts\gmaps.native_extensions.js" />
@@ -690,7 +688,6 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Сheck.cshtml" />
     <Content Include="Views\Collar\Collar.cshtml" />
-
     <Content Include="Views\Language\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -712,7 +709,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RegistrationText.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
