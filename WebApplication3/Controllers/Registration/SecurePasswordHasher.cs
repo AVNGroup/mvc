@@ -6,6 +6,10 @@ using System.Web;
 
 namespace WebApplication3.Controllers.Registration
 {
+    /// <summary>
+    /// Class SecurePasswordHasher gives you the opportunity
+    /// to convert password in the hash format. 
+    /// </summary>
     public class SecurePasswordHasher
     {
         /// <summary>

@@ -11,6 +11,11 @@ using WebApplication3.ConnectedAzure;
 
 namespace WebApplication3.Controllers.Registration
 {
+    /// <summary>
+    /// Class RegistrationController is responsible for
+    /// verifying entered module ID and adding a new user with
+    /// entered password and login
+    /// </summary>
     public class RegistrationController : Controller
     {
         private string CLIENT_TABLE_NAME = "IdentityTable";
@@ -20,6 +25,11 @@ namespace WebApplication3.Controllers.Registration
         {
             return View();
         }
+
+        /// <summary>
+        /// Check if the entered moduleID is entered right
+        /// </summary>
+        /// <param name="ID">module id</param>
         public async Task<ActionResult> Сheck(string ID) {
             if (await RegistrationLogin.IsIDDeviceCorrect("Modules", ID)) {
                 CloudTable table = ConnectedAzureServises.tableClient.GetTableReference("Modules");
@@ -38,8 +48,14 @@ namespace WebApplication3.Controllers.Registration
             }
         }
 
+        /// <summary>
+        /// Add a new User with the entered login and password.
+        /// With a Hash function the password is converted to a hash 
+        /// that will be stored in DB.
+        /// </summary>
+        /// <param name="login">the user login</param>
+        /// /// <param name="password">the user password</param>
         public async Task<ActionResult> AddUsers(string login, string password) {
-            //Hash
             string hashedPassword = SecurePasswordHasher.Hash(password);
 
             if (await RegistrationLogin.IsLoginNew(CLIENT_TABLE_NAME, login, hashedPassword)) {

@@ -5,13 +5,12 @@ using Microsoft.WindowsAzure.Storage.Auth;
 using WebApplication3.Controllers.Registration;
 using WebApplication3.ConnectedAzure;
 
+/// <summary>
+/// Class RegistrationLogin is responsible for 
+/// the proccess of the user registration 
+/// </summary>
 public class RegistrationLogin {
-    // private const string HOST = "AVN-group.azure-devices.net";
-    // private const int PORT = 5671;
-    // private const string SHARED_ACCESS_KEY_NAME = "iothubowner";
-    // private const string SHARED_ACCESS_KEY = "jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
-    // private static string connectionString = "HostName=AVN-group.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jtRCksTr0b+5qWiPsSwVMQwO91+UiATq7JUJ/oqfsBY=";
-
+    /// <value>Variable <c>registrationTableName</c> represents table in DB</value>
     private static string registrationTableName = "IdentityTable";
 
     public RegistrationLogin() {
@@ -23,6 +22,14 @@ public class RegistrationLogin {
 
         return data;
     }
+
+    /// <summary>
+    /// Register of the User
+    /// </summary>
+    /// <param name="tableClient">table Client</param>
+    /// <param name="id">module Id</param>
+    /// <param name="pasword">User pasword</param>
+    /// <returns>boolean (is registered or no)</returns>
     static public async Task Registration(CloudTableClient tableClient, string id, string pasword) {
         CloudTable table = tableClient.GetTableReference(registrationTableName);
 
@@ -42,6 +49,15 @@ public class RegistrationLogin {
                 check = true;
         }
     }
+
+    /// <summary>
+    /// Is the login and password entered correct
+    /// </summary>
+    /// <param name="tableClient">table Client</param>
+    /// /// <param name="tablename">table name</param>
+    /// <param name="id">module Id</param>
+    /// <param name="pasword">User pasword</param>
+    /// <returns>boolean (Is the login and password entered correct)</returns>
     static public async Task<bool> IsLoginAndPasswordCorrect(CloudTableClient tableClient,string tablename, string id, string password) {
         CloudTable table = tableClient.GetTableReference(tablename);
 
@@ -61,6 +77,13 @@ public class RegistrationLogin {
             return false;
         }
     }
+
+    /// <summary>
+    /// Is the login and password entered correct
+    /// </summary>
+    /// <param name="password">the password of the User</param>
+    /// <param name="login">the login of the User</param>
+    /// <returns>boolean (Is the login and password entered correct)</returns>
     static public async Task<bool> IsLoginAndPasswordCorrect(string login, string password) {
 
         CloudTable table = ConnectedAzureServises.tableClient.GetTableReference(registrationTableName);
@@ -82,6 +105,13 @@ public class RegistrationLogin {
         }
 
     }
+
+    /// <summary>
+    /// Is Device ID entered correct
+    /// </summary>
+    /// <param name="tablename">the table name</param>
+    /// <param name="id">the module id</param>
+    /// <returns>boolean (Is Device ID entered correct)</returns>
     static public async Task<bool> IsIDDeviceCorrect(string tablename, string id) {
         CloudTable table = ConnectedAzureServises.tableClient.GetTableReference(tablename);
 
@@ -95,6 +125,14 @@ public class RegistrationLogin {
             return true;
 
         }
+
+    /// <summary>
+    /// Check if User is a new
+    /// </summary>
+    /// <param name="tablename">the table name</param>
+    /// <param name="login">the login of the user</param>
+    /// <param name="hashedPassword">the hashed password of the user</param>
+    /// <returns>boolean (if user is a new)</returns>
     static public async Task<bool> IsLoginNew(string tablename, string login, string hashedPassword) {
         CloudTable table = ConnectedAzureServises.tableClient.GetTableReference(tablename);
 
